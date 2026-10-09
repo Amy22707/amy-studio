@@ -1,0 +1,13 @@
+{
+  "name": "amy-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An independent home for small games and useful software.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs dist"
+  },
+  "engines": { "node": ">=22" }
+}

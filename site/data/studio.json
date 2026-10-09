@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "id": "game-01",
+      "kind": "game",
+      "title": "",
+      "description": "",
+      "details": "",
+      "platforms": [],
+      "version": "",
+      "image": "",
+      "downloadUrl": "",
+      "playUrl": "",
+      "sourceUrl": "",
+      "releaseUrl": ""
+    },
+    {
+      "id": "tool-01",
+      "kind": "tool",
+      "title": "",
+      "description": "",
+      "details": "",
+      "platforms": [],
+      "version": "",
+      "image": "",
+      "downloadUrl": "",
+      "playUrl": "",
+      "sourceUrl": "",
+      "releaseUrl": ""
+    }
+  ],
+  "updates": [],
+  "contact": { "email": "", "feedbackUrl": "" }
+}

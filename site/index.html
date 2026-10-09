@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Amy Studio — small games, useful tools, and ideas made real.">
+    <meta name="color-scheme" content="light dark">
+    <title>Amy Studio — Made with curiosity</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <script>
+      try {
+        const preference = localStorage.getItem('amy-studio.theme');
+        if (preference === 'light' || preference === 'dark') document.documentElement.dataset.theme = preference;
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="Amy Studio home"><span class="brand-symbol" aria-hidden="true">a<span>✦</span></span>Amy Studio<span class="brand-period">.</span></a>
+        <nav aria-label="Main navigation">
+          <a href="#work">Work</a><a href="#updates">Updates</a><a href="#about">The studio</a>
+        </nav>
+        <div class="theme-controls">
+          <button id="theme-toggle" class="icon-button" aria-label="Switch color theme" title="Switch color theme"><span aria-hidden="true">☾</span></button>
+          <button id="theme-system" class="system-button" title="Follow your device theme" aria-pressed="true">Auto</button>
+        </div>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero shell" aria-labelledby="hero-heading">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="tiny-star" aria-hidden="true">✦</span> A SMALL INDEPENDENT STUDIO</p>
+          <h1 id="hero-heading">Useful things.<br>Playful things.<br><span>A little of both.</span></h1>
+          <p class="hero-description">A home for games to get lost in, tools to make life a little easier, and ideas worth making real.</p>
+          <a class="button primary" href="#work">Explore the work <span aria-hidden="true">↘</span></a>
+          <p class="hero-footnote">Made with curiosity. Shared with you.</p>
+        </div>
+        <div class="studio-board" aria-hidden="true">
+          <div class="board-heading"><span>ON THE WORKBENCH</span><span>01 / 02</span></div>
+          <div class="board-game"><div class="window-dots"><i></i><i></i><i></i></div><div class="game-scene"><span class="scene-sun"></span><span class="scene-hill hill-one"></span><span class="scene-hill hill-two"></span><span class="scene-character">✦</span><span class="scene-spark spark-one">+</span><span class="scene-spark spark-two">+</span></div><div class="board-label">a little play <span>↗</span></div></div>
+          <div class="board-tool"><span class="tool-symbol">⌘</span><div><span class="tool-line long"></span><span class="tool-line"></span></div><span class="tool-check">✓</span></div>
+          <div class="board-note">Good ideas start small.</div>
+          <span class="board-sticker">made<br>with care</span>
+        </div>
+      </section>
+      <section class="work-section shell" id="work" aria-labelledby="work-heading">
+        <div class="section-heading"><div><p class="eyebrow">THE COLLECTION</p><h2 id="work-heading">From the studio</h2></div><p>For a little fun.<br>For a little everyday magic.</p></div>
+        <div class="collection-toolbar">
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button class="filter active" data-filter="all" aria-pressed="true">Everything</button>
+            <button class="filter" data-filter="game" aria-pressed="false">Games</button>
+            <button class="filter" data-filter="tool" aria-pressed="false">Tools</button>
+          </div>
+          <span id="project-count" class="collection-count" role="status"></span>
+        </div>
+        <div id="projects" class="project-grid" aria-busy="true"><p class="loading-note">Opening the collection…</p></div>
+        <noscript><p class="empty-note">Enable JavaScript to browse the collection and project details.</p></noscript>
+      </section>
+      <section class="updates-section shell" id="updates" aria-labelledby="updates-heading">
+        <div class="section-heading"><div><p class="eyebrow">WORK IN PROGRESS</p><h2 id="updates-heading">Studio notes</h2></div><p>New releases, small improvements,<br>and what comes next.</p></div>
+        <div id="updates-list" class="updates-list"><p class="empty-note">Release notes will appear here as things take shape.</p></div>
+      </section>
+      <section class="about-section shell" id="about" aria-labelledby="about-heading">
+        <div class="about-card"><div><p class="eyebrow">HELLO FROM THE WORKBENCH</p><h2 id="about-heading">An idea.<br>A few experiments.<br>Something you can use.</h2></div><div class="about-copy"><p>Amy Studio is a place for small software projects, from playful games to practical tools.</p><p>Each project has its own page in the collection, with downloads and release notes when it is ready to share.</p><div class="contact-area" id="contact"><p class="contact-label">SAY HELLO / SHARE FEEDBACK</p><div id="contact-links"><p class="contact-placeholder">Contact details will be added here.</p></div></div></div></div>
+      </section>
+    </main>
+    <footer class="shell site-footer"><a class="brand footer-brand" href="./">Amy Studio<span class="brand-period">.</span></a><p>Small things, thoughtfully made.</p><span>© <span id="year">2026</span> Amy Studio</span></footer>
+    <dialog id="project-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-body"><button class="dialog-close icon-button" aria-label="Close project details">×</button><p class="eyebrow" id="dialog-kind"></p><h2 id="dialog-title"></h2><p id="dialog-description"></p><div id="dialog-meta" class="project-meta"></div><div id="dialog-details" class="dialog-details"></div><div id="dialog-links" class="dialog-links"></div><p id="dialog-placeholder" class="empty-note" hidden>This space is waiting for its first release. Check back soon.</p></div>
+    </dialog>
+  </body>
+</html>

@@ -1,6 +1,21 @@
 {
   "projects": [
     {
+      "id": "travel-frog",
+      "kind": "game",
+      "title": "旅行青蛙 · 离线小屋",
+      "description": "留住你的小青蛙，继续它的旅程。普通版与图鉴版，支持电脑、手机和网页游玩。",
+      "details": "普通版保留旅行与收集进度，图鉴版解锁收藏并使用独立存档。介绍页提供网页入口、Windows 与安卓下载，以及安装、官服备份和存档导入导出教程。",
+      "platforms": ["Windows", "Android", "iOS / Web"],
+      "version": "v0.2.0",
+      "image": "https://amy22707.github.io/studio/travel-frog/play/icon-512.png",
+      "pageUrl": "https://amy22707.github.io/studio/travel-frog/",
+      "downloadUrl": "",
+      "playUrl": "",
+      "sourceUrl": "https://github.com/Amy22707/Travel-Frog",
+      "releaseUrl": "https://github.com/Amy22707/Travel-Frog/releases/tag/v0.2.0"
+    },
+    {
       "id": "game-01",
       "kind": "game",
       "title": "",

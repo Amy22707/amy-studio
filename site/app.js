@@ -81,7 +81,7 @@ function openProject(project) {
   document.querySelector('#dialog-details').textContent = text(project.details);
   const actions = document.querySelector('#dialog-links');
   actions.replaceChildren();
-  for (const [label, key] of [['Download', 'downloadUrl'], ['Play online', 'playUrl'], ['Release notes', 'releaseUrl'], ['Source code', 'sourceUrl']]) {
+  for (const [label, key] of [['介绍与教程', 'pageUrl'], ['Download', 'downloadUrl'], ['Play online', 'playUrl'], ['Release notes', 'releaseUrl'], ['Source code', 'sourceUrl']]) {
     const href = externalUrl(project[key]);
     if (href) actions.append(link(label, href, actions.childElementCount === 0));
   }
@@ -93,7 +93,7 @@ function card(project) {
   const node = element('article', 'project-card');
   const copy = element('div', 'project-copy');
   const topline = element('div', 'project-topline');
-  const hasDownload = externalUrl(project.downloadUrl) || externalUrl(project.playUrl);
+  const hasDownload = externalUrl(project.pageUrl) || externalUrl(project.downloadUrl) || externalUrl(project.playUrl);
   topline.append(element('span', '', project.kind === 'game' ? 'GAME' : 'TOOL'), element('span', 'project-status', hasDownload ? 'AVAILABLE' : 'ON THE WORKBENCH'));
   const actions = element('div', 'project-actions');
   const details = element('button', 'detail-button', 'View details');
@@ -103,10 +103,12 @@ function card(project) {
   details.setAttribute('aria-label', `View details: ${title(project)}`);
   details.addEventListener('click', () => openProject(project));
   actions.append(details);
-  if (externalUrl(project.downloadUrl)) actions.append(link('Download ↓', externalUrl(project.downloadUrl), true));
+  if (externalUrl(project.pageUrl)) actions.append(link('介绍与下载 ↗', externalUrl(project.pageUrl), true));
+  else if (externalUrl(project.downloadUrl)) actions.append(link('Download ↓', externalUrl(project.downloadUrl), true));
   else if (externalUrl(project.playUrl)) actions.append(link('Play ↗', externalUrl(project.playUrl), true));
   copy.append(topline, element('h3', '', title(project)), element('p', '', description(project)), meta(project), actions);
   node.append(artwork(project), copy);
+  node.dataset.project = project.id;
   return node;
 }
 

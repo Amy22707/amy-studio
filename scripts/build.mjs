@@ -9,7 +9,8 @@ function checkUrl(value, field) {
   if (!value) return;
   const url = new URL(value);
   if (!['https:', 'http:'].includes(url.protocol)) throw new Error(`${field} must use an HTTP(S) URL.`);
-  if (url.hostname.toLowerCase() === 'amy22707.github.io' && !url.pathname.startsWith('/amy-studio/')) {
+  const frogPage = url.pathname === '/studio/travel-frog/' || url.pathname === '/studio/travel-frog/play/icon-512.png';
+  if (url.hostname.toLowerCase() === 'amy22707.github.io' && !url.pathname.startsWith('/amy-studio/') && !frogPage) {
     throw new Error(`${field} links back to the personal website. Keep Studio links within /amy-studio/.`);
   }
 }
@@ -21,7 +22,7 @@ for (const project of data.projects) {
     if (typeof project[field] !== 'string') throw new Error(`${project.id}: ${field} must be a string.`);
   }
   if (!Array.isArray(project.platforms) || project.platforms.some((value) => typeof value !== 'string')) throw new Error(`${project.id}: platforms must be a string array.`);
-  for (const field of ['downloadUrl', 'playUrl', 'sourceUrl', 'releaseUrl']) checkUrl(project[field], `${project.id}.${field}`);
+  for (const field of ['pageUrl', 'downloadUrl', 'playUrl', 'sourceUrl', 'releaseUrl']) checkUrl(project[field], `${project.id}.${field}`);
   if (project.image) {
     if (/^https?:\/\//.test(project.image)) checkUrl(project.image, `${project.id}.image`);
     else {

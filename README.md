@@ -1,6 +1,6 @@
 # Amy Studio
 
-An independent, static website for games and tools. The personal website links to this Studio at `https://amy22707.github.io/amy-studio/`. Travel Frog has a dedicated introduction and tutorial page at `https://amy22707.github.io/studio/travel-frog/`.
+An independent, static website for games and tools. Its navigation, branding and footer contain no links to the personal homepage. The personal website links to this Studio at `https://amy22707.github.io/amy-studio/`.
 
 The site has no third-party runtime dependencies, analytics, external fonts, or account integrations. It includes responsive layouts, category filters, project details, download links, studio updates, and a theme switch with system-following mode.
 
@@ -27,7 +27,6 @@ Update `site/data/studio.json`. The initial two entries are intentionally blank;
 
 - `kind`: `game` or `tool`.
 - `details`: plain text; use `\n` for newlines.
-- `pageUrl`: optional project introduction and tutorial page; shown as the primary card action.
 - `image`: put the screenshot in `site/images/` and use `./images/example.png`, or use an HTTPS image URL. Keep local paths relative for GitHub project Pages.
 - `downloadUrl`: a GitHub Releases asset URL, for example `https://github.com/Amy22707/REPO/releases/latest/download/FILE.zip`. Replace both placeholders with real values before adding it.
 - `playUrl`: a real hosted game URL, if available.
@@ -66,4 +65,4 @@ All site assets use relative URLs so the site works under `/amy-studio/`. A sepa
 
 ## About the one-way link
 
-The Studio site does not offer navigation to the personal homepage or display the owner's real name, education, personal blog, or personal contact details. The Travel Frog project page is linked directly from its card. This is navigation separation, not identity isolation: the shared GitHub account and `github.io` hostname can still identify the author.
+The Studio site does not offer navigation back to the personal website and does not display the owner's real name, education, personal blog, or personal contact details. This is navigation separation, not identity isolation: the shared GitHub account and `github.io` hostname can still identify the author.

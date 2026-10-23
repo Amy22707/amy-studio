@@ -66,7 +66,6 @@ h1 > span { color: var(--muted); font-family: Georgia, "Times New Roman", serif;
 .project-card { overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
 .project-art { position: relative; display: grid; place-items: center; height: 260px; overflow: hidden; background: var(--game-bg); }
 .project-art.tool { background: var(--tool-bg); }.project-art img { width: 100%; height: 100%; object-fit: cover; }
-.project-card[data-project="travel-frog"] .project-art img { object-fit: contain; padding: 52px; border-radius: 24px; }
 .art-caption { position: absolute; bottom: 13px; left: 17px; color: var(--muted); font-size: 9px; letter-spacing: .12em; }
 .game-tile { display: grid; grid-template-columns: repeat(3, 42px); gap: 9px; transform: rotate(-9deg); }
 .game-tile span { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid #8c9e8355; border-radius: 10px; background: var(--paper); font-size: 20px; color: var(--accent); }

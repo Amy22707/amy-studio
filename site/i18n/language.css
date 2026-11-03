@@ -44,6 +44,12 @@
 }
 @media (max-width: 520px) {
   .nav-wrap { gap: 12px; }
+  .nav-wrap .brand { font-size: 16px; gap: 8px; }
+  .nav-wrap .brand-mark { width: 30px; height: 30px; }
+  .nav-wrap .system-button { font-size: 9px; padding-inline: 6px; }
+  .nav-wrap .system-button span { display: none; }
+  .nav-wrap .system-button::before { content: "Auto"; }
+  :root[data-language="zh"] .nav-wrap .system-button::before { content: "自动"; }
   .nav-wrap .site-controls, .header-inner .site-controls { gap: 12px; }
   .language-switch { width: 114px; height: 34px; }
   .language-label { left: 9px; width: 16px; height: 16px; }
@@ -62,6 +68,7 @@
   .nav-wrap { gap: 10px; padding-inline: 16px; }
   .nav-wrap .brand { font-size: 15px; gap: 7px; }
   .nav-wrap .brand-mark { width: 30px; height: 30px; }
+  .nav-wrap .brand > span:last-child { display: none; }
   .nav-wrap .site-controls { gap: 10px; }
   .language-switch { width: 104px; }
   .language-switch select, .language-trigger { padding: 0 24px; font-size: 10px; }

@@ -117,13 +117,20 @@
     const key = normalize(source);
     if (!key) return source;
     const entry = catalog[key];
-    if (entry && typeof entry[mode] === 'string') {
-      if (entry[mode] === key) return source;
+    if (entry && typeof entry[mode] === 'string' && entry[mode] !== key) {
       const start = source.match(/^\s*/)[0];
       const end = source.match(/\s*$/)[0];
       return start + entry[mode] + end;
     }
-    if (mode === 'en' && /[\u3400-\u9fff]/.test(key)) missing = true;
+    if ((!entry || typeof entry[mode] !== 'string') && mode === 'en' && /[\u3400-\u9fff]/.test(key)) missing = true;
+    // A tag written as "#Name" reuses the translation of its bare label, so
+    // adding a tag cannot leave the article chip untranslated while the
+    // tag browser shows a translated label.
+    if (key.startsWith('#') && key.length > 1) {
+      const label = key.slice(1);
+      const translated = lookup(label);
+      if (translated !== label) return '#' + translated;
+    }
     const count = key.match(/^(\d+) projects?(?: · (\d+) coming soon)?$/);
     if (count && mode === 'zh') return `${count[1]} 个作品${count[2] ? ` · ${count[2]} 项即将推出` : ''}`;
     if (mode === 'zh' && /^\d+ posts? with this tag\.$/.test(key)) return key.replace(/^(\d+).*$/, '带此标签的文章共 $1 篇。');

@@ -23,7 +23,7 @@
   if (!control) {
     const host = document.querySelector('.site-controls') || document.querySelector('.nav-actions') || document.querySelector('.theme-controls')?.parentElement || document.querySelector('.top .shell nav');
     if (!host) return;
-    control = document.createElement('label');
+    control = document.createElement('div');
     control.className = 'language-switch';
     control.setAttribute('translate', 'no');
     control.setAttribute('data-language-control', '');
@@ -33,14 +33,84 @@
   const selector = control.querySelector('select');
   const status = control.querySelector('.language-status');
   selector.value = mode;
+  let languageButton = null;
+  let languageMenu = null;
+  let languageOptions = [];
+  function refreshLanguageMenu() {
+    if (!languageButton) return;
+    const text = selector.options[selector.selectedIndex].text;
+    languageButton.textContent = text;
+    languageButton.setAttribute('aria-label', 'Language / 语言: ' + text);
+    languageOptions.forEach((button, index) => {
+      const option = selector.options[index];
+      if (button.textContent !== option.text) button.textContent = option.text;
+      button.setAttribute('aria-selected', String(option.value === selector.value));
+    });
+  }
   const compactLanguageLabel = window.matchMedia('(max-width: 520px)');
   function updateDefaultLabel() {
     const option = selector.querySelector('option[value="default"]');
     const label = compactLanguageLabel.matches ? (mode === 'en' ? 'Default' : '默认') : '默认 / Default';
     if (option.textContent !== label) option.textContent = label;
+    refreshLanguageMenu();
   }
   updateDefaultLabel();
   compactLanguageLabel.addEventListener('change', updateDefaultLabel);
+
+  languageButton = document.createElement('button');
+  languageButton.type = 'button';
+  languageButton.className = 'language-trigger';
+  languageButton.setAttribute('aria-haspopup', 'listbox');
+  languageButton.setAttribute('aria-expanded', 'false');
+  languageButton.setAttribute('aria-controls', 'site-language-menu');
+  languageMenu = document.createElement('div');
+  languageMenu.className = 'language-menu';
+  languageMenu.id = 'site-language-menu';
+  languageMenu.hidden = true;
+  languageMenu.setAttribute('role', 'listbox');
+  languageMenu.setAttribute('aria-label', 'Language / 语言');
+  function closeLanguageMenu(focus = false) {
+    languageMenu.hidden = true;
+    languageButton.setAttribute('aria-expanded', 'false');
+    if (focus) languageButton.focus();
+  }
+  function openLanguageMenu() {
+    languageMenu.hidden = false;
+    languageButton.setAttribute('aria-expanded', 'true');
+    languageOptions[selector.selectedIndex]?.focus();
+  }
+  languageOptions = [...selector.options].map((option, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.tabIndex = -1;
+    button.setAttribute('role', 'option');
+    button.addEventListener('click', () => {
+      selector.value = option.value;
+      selector.dispatchEvent(new Event('change', { bubbles: true }));
+      refreshLanguageMenu();
+      closeLanguageMenu(true);
+    });
+    button.addEventListener('keydown', event => {
+      if (['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
+        event.preventDefault();
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? languageOptions.length - 1 : (index + (event.key === 'ArrowDown' ? 1 : -1) + languageOptions.length) % languageOptions.length;
+        languageOptions[next].focus();
+      } else if (event.key === 'Escape') { event.preventDefault(); closeLanguageMenu(true); }
+      else if (event.key === 'Tab') closeLanguageMenu(true);
+    });
+    languageMenu.append(button);
+    return button;
+  });
+  languageButton.addEventListener('click', () => languageMenu.hidden ? openLanguageMenu() : closeLanguageMenu());
+  languageButton.addEventListener('keydown', event => {
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); openLanguageMenu(); }
+    else if (event.key === 'Escape') closeLanguageMenu();
+  });
+  document.addEventListener('pointerdown', event => { if (!control.contains(event.target)) closeLanguageMenu(); });
+  control.addEventListener('focusout', () => { setTimeout(() => { if (!control.contains(document.activeElement)) closeLanguageMenu(); }, 0); });
+  selector.hidden = true;
+  control.append(languageButton, languageMenu);
+  refreshLanguageMenu();
 
   function lookup(source) {
     if (mode === 'default') return source;

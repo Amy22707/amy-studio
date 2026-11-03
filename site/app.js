@@ -51,11 +51,12 @@ function description(project) { return text(project.description) || 'A new space
 
 function artwork(project) {
   const node = element('div', `project-art ${project.kind}`);
+  if (project.imageLayout === 'postcard') node.classList.add('postcard');
   const url = imageUrl(project.image);
   if (url) {
     const image = element('img');
     image.src = url;
-    image.alt = `Artwork for ${title(project)}`;
+    image.alt = text(project.imageAlt) || `Artwork for ${title(project)}`;
     image.loading = 'lazy';
     image.addEventListener('error', () => { node.replaceWith(artwork({ ...project, image: '' })); }, { once: true });
     node.append(image);
@@ -179,7 +180,7 @@ function renderContact(contact) {
 
 async function loadCollection() {
   try {
-    const response = await fetch(new URL('./data/studio.json', import.meta.url));
+    const response = await fetch(new URL('./data/studio.json', import.meta.url), { cache: 'no-cache' });
     if (!response.ok) throw new Error('Could not load collection');
     const data = await response.json();
     if (!Array.isArray(data.projects)) throw new Error('Invalid collection');

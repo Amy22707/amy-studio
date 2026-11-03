@@ -33,6 +33,14 @@
   const selector = control.querySelector('select');
   const status = control.querySelector('.language-status');
   selector.value = mode;
+  const compactLanguageLabel = window.matchMedia('(max-width: 520px)');
+  function updateDefaultLabel() {
+    const option = selector.querySelector('option[value="default"]');
+    const label = compactLanguageLabel.matches ? (mode === 'en' ? 'Default' : '默认') : '默认 / Default';
+    if (option.textContent !== label) option.textContent = label;
+  }
+  updateDefaultLabel();
+  compactLanguageLabel.addEventListener('change', updateDefaultLabel);
 
   function lookup(source) {
     if (mode === 'default') return source;
@@ -107,9 +115,7 @@
     observe.disconnect();
     try {
     missing = false;
-    const defaultOption = selector.querySelector('option[value="default"]');
-    const defaultLabel = mode === 'zh' ? '默认' : 'Default';
-    if (defaultOption.textContent !== defaultLabel) defaultOption.textContent = defaultLabel;
+    updateDefaultLabel();
     root.dataset.language = mode;
     root.lang = mode === 'zh' ? 'zh-CN' : mode === 'en' ? 'en' : originalLang;
     if (blockTranslator?.apply(mode).pending) missing = true;

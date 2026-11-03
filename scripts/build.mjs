@@ -47,7 +47,13 @@ const languageVersion = createHash('sha256')
   .update(await readFile(resolve(site, 'i18n/language.css')))
   .update(await readFile(resolve(site, 'i18n/inline-blocks.mjs')))
   .digest('hex').slice(0, 10);
+const siteVersion = createHash('sha256')
+  .update(await readFile(resolve(site, 'styles.css')))
+  .update(await readFile(resolve(site, 'app.js')))
+  .digest('hex').slice(0, 10);
 const html = (await readFile(resolve(site, 'index.html'), 'utf8'))
+  .replace('./styles.css', `./styles.css?v=${siteVersion}`)
+  .replace('./app.js', `./app.js?v=${siteVersion}`)
   .replace('./i18n/language.css', `./i18n/language.css?v=${languageVersion}`)
   .replace('./i18n/runtime.js', `./i18n/runtime.js?v=${languageVersion}`);
 await writeFile(resolve('dist/index.html'), html);

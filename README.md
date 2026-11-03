@@ -32,6 +32,7 @@ Update `site/data/studio.json`. Travel Frog fills the first game slot; a blank t
 - `highlights`: optional array of short feature descriptions, shown directly on the homepage card.
 - `pageUrl`: optional project introduction URL. A page without a download or playable URL is marked `PREVIEW · TESTING`, not available for release.
 - `image`: put the screenshot in `site/images/` and use `./images/example.png`, or use an HTTPS image URL. Keep local paths relative for GitHub project Pages.
+- `imageLayout`: set to `postcard` for a full, uncropped 10:7 game postcard instead of the default padded artwork area. `imageAlt` supplies its accessible description.
 - `downloadUrl`: a GitHub Releases asset URL, for example `https://github.com/Amy22707/REPO/releases/latest/download/FILE.zip`. Replace both placeholders with real values before adding it.
 - `playUrl`: a real hosted game URL, if available.
 - `sourceUrl`: optional source repository link.

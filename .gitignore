@@ -3,3 +3,22 @@ dist/
 .DS_Store
 .env
 .env.*
+
+# Installers, game runtimes and private saves do not belong in the website source.
+*.exe
+*.msi
+*.apk
+*.aab
+*.ipa
+*.dmg
+*.zip
+*.7z
+*.rar
+*.frogsave
+*.jsonl
+user-data/
+backups/
+captures/
+site/downloads/
+site/releases/
+site/games/

@@ -14,6 +14,8 @@
       } catch {}
     </script>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./i18n/language.css">
+    <script defer src="./i18n/runtime.js"></script>
     <script type="module" src="./app.js"></script>
   </head>
   <body>
@@ -24,9 +26,17 @@
         <nav aria-label="Main navigation">
           <a href="#work">Work</a><a href="#updates">Updates</a><a href="#about">The studio</a>
         </nav>
-        <div class="theme-controls">
-          <button id="theme-toggle" class="icon-button" aria-label="Switch color theme" title="Switch color theme"><span aria-hidden="true">☾</span></button>
-          <button id="theme-system" class="system-button" title="Follow your device theme" aria-pressed="true">Auto</button>
+        <div class="site-controls">
+          <div class="theme-controls">
+            <button id="theme-toggle" class="icon-button" aria-label="Switch color theme" title="Switch color theme"><span aria-hidden="true">☾</span></button>
+            <button id="theme-system" class="system-button" title="Follow your device theme" aria-pressed="true">Auto</button>
+          </div>
+          <label class="language-switch" translate="no" data-language-control>
+            <span class="language-label" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.3 2.5 3.5 5.5 3.5 9s-1.2 6.5-3.5 9c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z"/></svg></span>
+            <select aria-label="Language / 语言"><option value="default">Default</option><option value="zh">中文</option><option value="en">English</option></select>
+            <svg class="language-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+            <span class="language-status" role="status" hidden></span>
+          </label>
         </div>
       </div>
     </header>

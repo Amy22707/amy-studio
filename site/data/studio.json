@@ -1,14 +1,21 @@
 {
   "projects": [
     {
-      "id": "game-01",
+      "id": "travel-frog",
       "kind": "game",
-      "title": "",
-      "description": "",
-      "details": "",
-      "platforms": [],
+      "title": "Travel Frog: A Journey to China — Local Reverse-Engineered Edition",
+      "description": "An unofficial local recreation of the game's full feature set, with Standard and Gallery editions for Windows, Android, and the web.",
+      "details": "Recreates travel, postcards, albums and animated photos, shops and lottery, visitors, gardening, furniture, crafting, collections, and seasonal events. Saves can be imported, exported, and transferred between devices. Testing is ongoing; downloads and online play are not yet available. The project page includes installation and official-save backup instructions.",
+      "highlights": [
+        "Travel, postcards, albums, and full collections",
+        "Gardening, furniture, crafting, and seasonal events",
+        "Standard & Gallery editions with separate saves",
+        "Save import, export, and device migration"
+      ],
+      "platforms": ["Windows", "Android", "Web"],
       "version": "",
-      "image": "",
+      "image": "./images/travel-frog.png",
+      "pageUrl": "https://amy22707.github.io/studio/travel-frog/",
       "downloadUrl": "",
       "playUrl": "",
       "sourceUrl": "",

@@ -55,7 +55,7 @@ function artwork(project) {
   if (url) {
     const image = element('img');
     image.src = url;
-    image.alt = `${title(project)} screenshot`;
+    image.alt = `Artwork for ${title(project)}`;
     image.loading = 'lazy';
     image.addEventListener('error', () => { node.replaceWith(artwork({ ...project, image: '' })); }, { once: true });
     node.append(image);
@@ -81,7 +81,7 @@ function openProject(project) {
   document.querySelector('#dialog-details').textContent = text(project.details);
   const actions = document.querySelector('#dialog-links');
   actions.replaceChildren();
-  for (const [label, key] of [['Download', 'downloadUrl'], ['Play online', 'playUrl'], ['Release notes', 'releaseUrl'], ['Source code', 'sourceUrl']]) {
+  for (const [label, key] of [['Project page', 'pageUrl'], ['Download', 'downloadUrl'], ['Play online', 'playUrl'], ['Release notes', 'releaseUrl'], ['Source code', 'sourceUrl']]) {
     const href = externalUrl(project[key]);
     if (href) actions.append(link(label, href, actions.childElementCount === 0));
   }
@@ -94,7 +94,7 @@ function card(project) {
   const copy = element('div', 'project-copy');
   const topline = element('div', 'project-topline');
   const hasDownload = externalUrl(project.downloadUrl) || externalUrl(project.playUrl);
-  topline.append(element('span', '', project.kind === 'game' ? 'GAME' : 'TOOL'), element('span', 'project-status', hasDownload ? 'AVAILABLE' : 'ON THE WORKBENCH'));
+  topline.append(element('span', '', project.kind === 'game' ? 'GAME' : 'TOOL'), element('span', 'project-status', hasDownload ? 'AVAILABLE' : externalUrl(project.pageUrl) ? 'PREVIEW · TESTING' : 'ON THE WORKBENCH'));
   const actions = element('div', 'project-actions');
   const details = element('button', 'detail-button', 'View details');
   details.type = 'button';
@@ -103,9 +103,21 @@ function card(project) {
   details.setAttribute('aria-label', `View details: ${title(project)}`);
   details.addEventListener('click', () => openProject(project));
   actions.append(details);
-  if (externalUrl(project.downloadUrl)) actions.append(link('Download ↓', externalUrl(project.downloadUrl), true));
+  if (externalUrl(project.pageUrl)) actions.append(link('Project preview ↗', externalUrl(project.pageUrl), true));
+  else if (externalUrl(project.downloadUrl)) actions.append(link('Download ↓', externalUrl(project.downloadUrl), true));
   else if (externalUrl(project.playUrl)) actions.append(link('Play ↗', externalUrl(project.playUrl), true));
-  copy.append(topline, element('h3', '', title(project)), element('p', '', description(project)), meta(project), actions);
+  copy.append(topline, element('h3', '', title(project)), element('p', '', description(project)));
+  const highlights = (Array.isArray(project.highlights) ? project.highlights : []).filter((value) => text(value));
+  if (highlights.length) {
+    const list = element('ul', 'project-highlights');
+    for (const highlight of highlights) list.append(element('li', '', text(highlight)));
+    copy.append(list);
+  }
+  copy.append(meta(project));
+  if (!hasDownload && externalUrl(project.pageUrl)) {
+    copy.append(element('p', 'project-notice', 'Testing in progress. Downloads and online play are not yet available.'));
+  }
+  copy.append(actions);
   node.append(artwork(project), copy);
   return node;
 }
@@ -114,7 +126,9 @@ function renderProjects() {
   const shown = projects.filter((project) => activeFilter === 'all' || project.kind === activeFilter);
   projectContainer.replaceChildren(...shown.map(card));
   if (!shown.length) projectContainer.append(element('p', 'empty-note', 'Nothing here yet. Come back soon.'));
-  count.textContent = `${shown.length} ${shown.length === 1 ? 'project' : 'projects'}`;
+  const namedProjects = shown.filter((project) => text(project.title)).length;
+  const upcoming = shown.length - namedProjects;
+  count.textContent = `${namedProjects} ${namedProjects === 1 ? 'project' : 'projects'}${upcoming ? ` · ${upcoming} coming soon` : ''}`;
   filters.forEach((button) => {
     const active = button.dataset.filter === activeFilter;
     button.classList.toggle('active', active);

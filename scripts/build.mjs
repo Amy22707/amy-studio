@@ -57,4 +57,15 @@ const html = (await readFile(resolve(site, 'index.html'), 'utf8'))
   .replace('./i18n/language.css', `./i18n/language.css?v=${languageVersion}`)
   .replace('./i18n/runtime.js', `./i18n/runtime.js?v=${languageVersion}`);
 await writeFile(resolve('dist/index.html'), html);
+const guideVersion = createHash('sha256')
+  .update(await readFile(resolve(site, 'jizhi/guide.css')))
+  .update(await readFile(resolve(site, 'jizhi/guide.js')))
+  .digest('hex').slice(0, 10);
+const guideHtml = (await readFile(resolve(site, 'jizhi/index.html'), 'utf8'))
+  .replace('../styles.css', `../styles.css?v=${siteVersion}`)
+  .replace('./guide.css', `./guide.css?v=${guideVersion}`)
+  .replace('./guide.js', `./guide.js?v=${guideVersion}`)
+  .replace('../i18n/language.css', `../i18n/language.css?v=${languageVersion}`)
+  .replace('../i18n/runtime.js', `../i18n/runtime.js?v=${languageVersion}`);
+await writeFile(resolve('dist/jizhi/index.html'), guideHtml);
 console.log(`Built Amy Studio: ${data.projects.length} project slots. Output: dist/`);

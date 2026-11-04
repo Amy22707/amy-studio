@@ -37,6 +37,7 @@
       "platforms": ["Chrome", "Firefox", "Edge", "Safari"],
       "version": "",
       "image": "./images/jizhi-waves.png",
+      "pageUrl": "https://amy22707.github.io/amy-studio/jizhi/",
       "imageAlt": "Jizhi Enhanced: Chinese poetry over traditional-color waves",
       "downloadUrl": "",
       "playUrl": "",

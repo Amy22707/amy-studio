@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jizhi Enhanced — Guide · Amy Studio</title>
+  <meta name="description" content="Jizhi Enhanced: a poetry-filled new tab. Features, installation, and a guide to making it your own.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script>try { const t=localStorage.getItem('amy-studio.theme'); if(t==='light'||t==='dark')document.documentElement.dataset.theme=t; } catch {}</script>
+  <link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="./guide.css"><link rel="stylesheet" href="../i18n/language.css">
+  <script defer src="../i18n/runtime.js"></script><script type="module" src="./guide.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="../">Amy Studio<span class="brand-period">.</span></a>
+    <nav aria-label="Page navigation"><a href="#features">Features</a><a href="#install">Install</a><a href="#guide">User guide</a></nav>
+    <div class="site-controls"><div class="theme-controls">
+      <button id="theme-toggle" class="icon-button" aria-label="Switch color theme"><span aria-hidden="true">☾</span></button>
+      <button id="theme-system" class="system-button" title="Follow your device theme" aria-pressed="true">Auto</button>
+    </div></div>
+  </div></header>
+  <main id="main" class="shell guide-page">
+    <section class="guide-hero">
+      <p class="eyebrow">A QUIETER NEW TAB</p><h1>Jizhi Enhanced</h1>
+      <p class="guide-lead">A little poetry. A little color. A fresh start with every tab.</p>
+      <p>An unofficial enhancement of the original Jizhi extension, pairing classical Chinese poetry with animated traditional colors, offline poems, and personal touches.</p>
+      <div class="guide-actions"><a class="button primary" href="#install">Get started ↘</a><a class="button" href="https://github.com/Amy22707/jizhi" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
+      <figure class="guide-cover"><img src="../images/jizhi-waves.png" alt="Jizhi Enhanced: Chinese poetry over traditional-color waves" width="1080" height="680"><figcaption>A new tab, with room to breathe.</figcaption></figure>
+    </section>
+    <section id="features" class="guide-section"><p class="eyebrow">THE SMALL DETAILS</p><h2>Make a new tab feel like yours.</h2>
+      <div class="guide-grid">
+        <article class="guide-card"><h3>Poetry, even offline</h3><p>Explore 8,500 offline verses. Search by poem, poet, or title, pin a favorite, or let random selection bring something new.</p></article>
+        <article class="guide-card"><h3>Colors in motion</h3><p>658 traditional colors, layered waves and Blobs animations, with light, dark, and system-following themes.</p></article>
+        <article class="guide-card"><h3>Type with character</h3><p>Bundled Chinese fonts, simplified and traditional characters, horizontal and vertical layouts, and Nüshu Fengqi with optional Chinese text alongside.</p></article>
+        <article class="guide-card"><h3>Your everyday shortcuts</h3><p>An optional search box, up to eight pinned websites, separate poem and color-name settings, and background screenshots.</p></article>
+      </div>
+    </section>
+    <section id="install" class="guide-section"><p class="eyebrow">DOWNLOAD &amp; INSTALL</p><h2>Choose your way in.</h2>
+      <p>Store listings will be added here after publication. These are placeholders, not live install links.</p>
+      <div class="guide-grid store-grid">
+        <article class="guide-card"><h3>Chrome Web Store</h3><span class="store-pending" aria-disabled="true">Awaiting publication</span></article>
+        <article class="guide-card"><h3>Firefox Add-ons</h3><span class="store-pending" aria-disabled="true">Awaiting publication</span></article>
+        <article class="guide-card"><h3>Microsoft Edge Add-ons</h3><span class="store-pending" aria-disabled="true">Awaiting publication</span></article>
+      </div>
+      <div class="guide-note"><p>Until store publication, check GitHub Releases for available packages, or build from source. A package may not be available yet; this page does not promise a published download.</p><a href="https://github.com/Amy22707/jizhi/releases" target="_blank" rel="noopener noreferrer">Check GitHub Releases ↗</a></div>
+      <div class="guide-grid">
+        <article class="guide-card"><h3>Chrome &amp; Edge · Local installation</h3><ol>
+          <li>Download chrome_edge.zip from Releases when available, and extract it.</li>
+          <li>Open your browser's extensions page and enable Developer mode.</li>
+          <li>Choose Load unpacked and select the folder containing manifest.json. In Edge, keep the new-tab change if prompted.</li>
+          <li>Open a new tab. After updating the local files, use Reload on the extension card.</li>
+        </ol><p class="guide-code-label">Extensions pages</p><pre><code>chrome://extensions/
+edge://extensions/</code></pre></article>
+        <article class="guide-card"><h3>Firefox · Temporary installation</h3><ol>
+          <li>Download firefox.zip from Releases when available, or use your local build.</li>
+          <li>Open the debugging page below, choose Load Temporary Add-on, then select firefox.zip or the extracted manifest.json.</li>
+          <li>Open a new tab. Temporary add-ons must be loaded again after restarting Firefox; permanent installation requires Mozilla signing.</li>
+        </ol><pre><code>about:debugging#/runtime/this-firefox</code></pre></article>
+      </div>
+      <details><summary>Build from source</summary><p>In the project folder, install dependencies and build the browser packages.</p><pre><code>npm install --legacy-peer-deps
+npm run build</code></pre><p>Output: builds/chrome_edge.zip and builds/firefox.zip. For unpacked loading, use builds/build_chrome or builds/build_firefox.</p></details>
+    </section>
+    <section id="guide" class="guide-section"><p class="eyebrow">MAKE YOURSELF AT HOME</p><h2>A short user guide.</h2>
+      <div class="guide-grid">
+        <article class="guide-card"><h3>01 · Find your poem</h3><p>Open the gear menu, then Personalization. Search for a verse, author, or title, or choose a recommended poem. Select Random poem to resume rotation.</p></article>
+        <article class="guide-card"><h3>02 · Set the mood</h3><p>In Background, choose waves or Blobs, a theme, and motion settings. In Personalization, choose a traditional color or customize the wave color and its name. Choose Random to restore color rotation.</p></article>
+        <article class="guide-card"><h3>03 · Shape the words</h3><p>In Fonts, choose a bundled font and character style, then adjust poem and color-name sizes separately. Nüshu Fengqi can show the Chinese original alongside; characters without a matching glyph fall back to Chinese.</p></article>
+        <article class="guide-card"><h3>04 · Keep useful places nearby</h3><p>In Settings, turn on Show favorite websites. Add up to eight addresses; hover or focus a card and use its menu to edit or remove it. Favorites are stored in the current browser and return when re-enabled.</p></article>
+      </div>
+      <div class="guide-note"><h3>Keyboard shortcuts</h3><dl class="shortcut-list"><div><dt><kbd>Space</kbd></dt><dd>Pause or resume animation</dd></div><div><dt><kbd>←</kbd> <kbd>→</kbd></dt><dd>Change colors in wave mode</dd></div><div><dt><kbd>Alt</kbd> + <kbd>S</kbd></dt><dd>Save a background screenshot</dd></div></dl></div>
+      <div class="guide-grid gallery"><figure><img src="../images/jizhi-night.png" alt="Dark waves and vertical Chinese poetry" loading="lazy" width="1080" height="680"><figcaption>Dark waves and vertical Chinese poetry</figcaption></figure><figure><img src="../images/jizhi-blobs.png" alt="Poetry with a colorful Blobs background" loading="lazy" width="1080" height="680"><figcaption>Poetry with a colorful Blobs background</figcaption></figure></div>
+    </section>
+    <section class="guide-section"><h2>Questions &amp; credits</h2>
+      <details><summary>Where are my preferences saved?</summary><p>Poem and color history, pinned choices, and favorite websites stay in the current browser. Do not assume they will automatically sync across browsers or devices.</p></details>
+      <details><summary>Is this the original Jizhi?</summary><p>No. This is an unofficial enhanced version based on Jizhi by Unicar and its contributors. The original project's store listings are not download links for this enhanced version.</p><a href="https://github.com/liminalpurr/jizhi" target="_blank" rel="noopener noreferrer">Original Jizhi ↗</a></details>
+      <p>Thanks to the original Jizhi contributors and the maintainers of the poetry, color, and font resources. Full credits and data sources are documented in the repository.</p>
+      <div class="guide-actions"><a class="button" href="https://github.com/Amy22707/jizhi/blob/main/CREDITS.md" target="_blank" rel="noopener noreferrer">Credits ↗</a><a class="button" href="https://github.com/Amy22707/jizhi/issues" target="_blank" rel="noopener noreferrer">Feedback &amp; issues ↗</a></div>
+    </section>
+  </main>
+  <footer class="shell site-footer"><a class="brand" href="../">Amy Studio<span class="brand-period">.</span></a><p>Small things, thoughtfully made.</p><span>© <span id="year">2026</span> Amy Studio</span></footer>
+</body>
+</html>

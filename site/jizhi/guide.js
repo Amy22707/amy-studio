@@ -6,9 +6,11 @@ const current = () => root.dataset.theme || (media.matches ? 'dark' : 'light');
 function paint() {
   const dark = current() === 'dark';
   toggle.firstElementChild.textContent = dark ? '☀' : '☾';
-  toggle.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} mode`);
-  toggle.title = toggle.getAttribute('aria-label');
-  system.setAttribute('aria-pressed', String(!root.dataset.theme));
+  const label = root.dataset.language === 'en' ? `Switch to ${dark ? 'light' : 'dark'} mode` : `切换到${dark ? '浅' : '深'}色模式`;
+  if (toggle.getAttribute('aria-label') !== label) toggle.setAttribute('aria-label', label);
+  if (toggle.title !== label) toggle.title = label;
+  const pressed = String(!root.dataset.theme);
+  if (system.getAttribute('aria-pressed') !== pressed) system.setAttribute('aria-pressed', pressed);
 }
 toggle.addEventListener('click', () => {
   root.dataset.theme = current() === 'dark' ? 'light' : 'dark';
@@ -21,5 +23,6 @@ system.addEventListener('click', () => {
   paint();
 });
 media.addEventListener('change', paint);
+window.addEventListener('site-language-change', paint);
 document.querySelector('#year').textContent = String(new Date().getFullYear());
 paint();

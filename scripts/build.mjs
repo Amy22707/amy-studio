@@ -40,6 +40,16 @@ for (const update of data.updates) {
 checkUrl(data.contact?.feedbackUrl, 'contact.feedbackUrl');
 await mkdir(resolve('dist'), { recursive: true });
 await cp(site, resolve('dist'), { recursive: true });
+// Screenshots can be replaced without renaming them. Version their public URLs
+// from the actual bytes so visitors see the latest README previews.
+const versionedData = structuredClone(data);
+for (const project of versionedData.projects) {
+  if (project.image?.startsWith('./images/')) {
+    const version = createHash('sha256').update(await readFile(resolve(site, project.image))).digest('hex').slice(0, 10);
+    project.image += `?v=${version}`;
+  }
+}
+await writeFile(resolve('dist/data/studio.json'), JSON.stringify(versionedData, null, 2));
 // Give the shared controls a content version so a new HTML deployment cannot
 // accidentally execute a cached, older language-switcher script.
 const languageVersion = createHash('sha256')
@@ -61,11 +71,15 @@ const guideVersion = createHash('sha256')
   .update(await readFile(resolve(site, 'jizhi/guide.css')))
   .update(await readFile(resolve(site, 'jizhi/guide.js')))
   .digest('hex').slice(0, 10);
-const guideHtml = (await readFile(resolve(site, 'jizhi/index.html'), 'utf8'))
+let guideHtml = (await readFile(resolve(site, 'jizhi/index.html'), 'utf8'))
   .replace('../styles.css', `../styles.css?v=${siteVersion}`)
   .replace('./guide.css', `./guide.css?v=${guideVersion}`)
   .replace('./guide.js', `./guide.js?v=${guideVersion}`)
   .replace('../i18n/language.css', `../i18n/language.css?v=${languageVersion}`)
   .replace('../i18n/runtime.js', `../i18n/runtime.js?v=${languageVersion}`);
+for (const path of new Set([...guideHtml.matchAll(/src="(\.\.\/images\/[^"?]+)"/g)].map(match => match[1]))) {
+  const version = createHash('sha256').update(await readFile(resolve(site, 'jizhi', path))).digest('hex').slice(0, 10);
+  guideHtml = guideHtml.replaceAll(`src="${path}"`, `src="${path}?v=${version}"`);
+}
 await writeFile(resolve('dist/jizhi/index.html'), guideHtml);
 console.log(`Built Amy Studio: ${data.projects.length} project slots. Output: dist/`);

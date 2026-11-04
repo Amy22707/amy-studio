@@ -34,7 +34,7 @@
         "Traditional-color waves and Blobs animations",
         "Bundled fonts, including Nüshu Fengqi"
       ],
-      "platforms": ["Chrome", "Firefox", "Edge", "Safari"],
+      "platforms": ["Chrome", "Firefox", "Edge"],
       "version": "",
       "image": "./images/jizhi-waves.png",
       "pageUrl": "https://amy22707.github.io/amy-studio/jizhi/",

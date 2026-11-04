@@ -104,7 +104,7 @@ function card(project) {
   details.setAttribute('aria-label', `View details: ${title(project)}`);
   details.addEventListener('click', () => openProject(project));
   actions.append(details);
-  if (externalUrl(project.pageUrl)) actions.append(link(project.kind === 'tool' ? 'User guide ↗' : 'Project preview ↗', externalUrl(project.pageUrl), true));
+  if (externalUrl(project.pageUrl)) actions.append(link('User guide ↗', externalUrl(project.pageUrl), true));
   else if (externalUrl(project.downloadUrl)) actions.append(link('Download ↓', externalUrl(project.downloadUrl), true));
   else if (externalUrl(project.playUrl)) actions.append(link('Play ↗', externalUrl(project.playUrl), true));
   else if (externalUrl(project.sourceUrl)) actions.append(link('Source code', externalUrl(project.sourceUrl)));

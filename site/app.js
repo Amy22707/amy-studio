@@ -107,6 +107,7 @@ function card(project) {
   if (externalUrl(project.pageUrl)) actions.append(link('Project preview ↗', externalUrl(project.pageUrl), true));
   else if (externalUrl(project.downloadUrl)) actions.append(link('Download ↓', externalUrl(project.downloadUrl), true));
   else if (externalUrl(project.playUrl)) actions.append(link('Play ↗', externalUrl(project.playUrl), true));
+  else if (externalUrl(project.sourceUrl)) actions.append(link('Source code', externalUrl(project.sourceUrl)));
   copy.append(topline, element('h3', '', title(project)), element('p', '', description(project)));
   const highlights = (Array.isArray(project.highlights) ? project.highlights : []).filter((value) => text(value));
   if (highlights.length) {

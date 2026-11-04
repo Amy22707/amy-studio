@@ -95,7 +95,7 @@ function card(project) {
   const copy = element('div', 'project-copy');
   const topline = element('div', 'project-topline');
   const hasDownload = externalUrl(project.downloadUrl) || externalUrl(project.playUrl);
-  topline.append(element('span', '', project.kind === 'game' ? 'GAME' : 'TOOL'), element('span', 'project-status', hasDownload ? 'AVAILABLE' : externalUrl(project.pageUrl) ? 'PREVIEW · TESTING' : 'ON THE WORKBENCH'));
+  topline.append(element('span', '', project.kind === 'game' ? 'GAME' : 'TOOL'), element('span', 'project-status', hasDownload ? (project.prerelease ? 'PREVIEW AVAILABLE' : 'AVAILABLE') : externalUrl(project.pageUrl) ? 'PREVIEW · TESTING' : 'ON THE WORKBENCH'));
   const actions = element('div', 'project-actions');
   const details = element('button', 'detail-button', 'View details');
   details.type = 'button';
@@ -104,6 +104,7 @@ function card(project) {
   details.setAttribute('aria-label', `View details: ${title(project)}`);
   details.addEventListener('click', () => openProject(project));
   actions.append(details);
+  if (externalUrl(project.pageUrl) && externalUrl(project.sourceUrl)) actions.append(link('GitHub ↗', externalUrl(project.sourceUrl)));
   if (externalUrl(project.pageUrl)) actions.append(link('User guide ↗', externalUrl(project.pageUrl), true));
   else if (externalUrl(project.downloadUrl)) actions.append(link('Download ↓', externalUrl(project.downloadUrl), true));
   else if (externalUrl(project.playUrl)) actions.append(link('Play ↗', externalUrl(project.playUrl), true));
@@ -116,8 +117,8 @@ function card(project) {
     copy.append(list);
   }
   copy.append(meta(project));
-  if (!hasDownload && externalUrl(project.pageUrl)) {
-    copy.append(element('p', 'project-notice', project.kind === 'tool' ? 'Store listings are not yet available.' : 'Testing in progress. Downloads and online play are not yet available.'));
+  if (text(project.notice) || !hasDownload && externalUrl(project.pageUrl)) {
+    copy.append(element('p', 'project-notice', text(project.notice) || (project.kind === 'tool' ? 'Store listings are not yet available.' : 'Testing in progress. Downloads and online play are not yet available.')));
   }
   copy.append(actions);
   node.append(artwork(project), copy);

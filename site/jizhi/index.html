@@ -26,7 +26,7 @@
       <p class="guide-lead">开一页，见几枝。</p>
       <p>海上明月，庭前疏影。读过的诗句，有时会在意想不到的时候想起。几枝把它们放在新标签页里，伴着缓缓流动的中国传统色。</p>
       <p>这是基于原版几枝制作的非官方增强版。诗句、配色与字体均可离线使用，也可以留下自己偏爱的一句。</p>
-      <div class="guide-actions"><a class="button primary" href="#install">开始使用 ↘</a><a class="button" href="https://github.com/Amy22707/jizhi" target="_blank" rel="noopener noreferrer">源代码 ↗</a></div>
+      <div class="guide-actions"><a class="button primary" href="#install">下载与安装 ↘</a><a class="button" href="https://github.com/Amy22707/jizhi" target="_blank" rel="noopener noreferrer">去 GitHub 看看 ↗</a></div>
       <figure class="guide-cover"><img src="../images/jizhi-waves.png" alt="水色波浪与张九龄《望月怀远》" width="1080" height="680"><figcaption>水色 · 张九龄《望月怀远》</figcaption></figure>
     </section>
     <section id="features" class="guide-section"><p class="eyebrow">诗与颜色之间</p><h2>偶然读到，也可长留。</h2>
@@ -38,23 +38,30 @@
       </div>
     </section>
     <section id="install" class="guide-section"><p class="eyebrow">下载与安装</p><h2>选择你的安装方式。</h2>
+      <p>v2.5.2 预览版已发布，选择对应浏览器的安装包即可开始。安装方法见下方说明。</p>
+      <div class="guide-grid store-grid">
+        <article class="guide-card"><h3>Chrome</h3><a class="button primary" href="https://github.com/Amy22707/jizhi/releases/download/v2.5.2/chrome.zip">下载 Chrome ZIP ↓</a></article>
+        <article class="guide-card"><h3>Microsoft Edge</h3><a class="button primary" href="https://github.com/Amy22707/jizhi/releases/download/v2.5.2/edge.zip">下载 Edge ZIP ↓</a></article>
+        <article class="guide-card"><h3>Firefox 142+</h3><a class="button primary" href="https://github.com/Amy22707/jizhi/releases/download/v2.5.2/firefox.zip">下载 Firefox ZIP ↓</a></article>
+      </div>
+      <div class="guide-note"><p>Firefox 当前为未签名预览包，需要临时加载；重启浏览器后须重新加载。firefox-source.zip 是审核源码，不用于安装。</p><a href="https://github.com/Amy22707/jizhi/releases/tag/v2.5.2" target="_blank" rel="noopener noreferrer">查看完整发布说明 ↗</a></div>
+      <h3>扩展商店</h3>
       <p>上架后将在这里补充商店链接。目前仅作占位，暂不可点击安装。</p>
       <div class="guide-grid store-grid">
         <article class="guide-card"><h3>Chrome Web Store</h3><span class="store-pending" aria-disabled="true">待发布</span></article>
         <article class="guide-card"><h3>Firefox Add-ons</h3><span class="store-pending" aria-disabled="true">待发布</span></article>
         <article class="guide-card"><h3>Microsoft Edge Add-ons</h3><span class="store-pending" aria-disabled="true">待发布</span></article>
       </div>
-      <div class="guide-note"><p>商店上架前，可以到 GitHub Releases 查看是否已有安装包，或自行从源码构建。安装包可能尚未发布，请以发布页实际内容为准。</p><a href="https://github.com/Amy22707/jizhi/releases" target="_blank" rel="noopener noreferrer">查看 GitHub Releases ↗</a></div>
       <div class="guide-grid">
         <article class="guide-card"><h3>Chrome 与 Edge · 本地安装</h3><ol>
-          <li>发布后，从 Releases 下载对应浏览器的 chrome.zip 或 edge.zip 并解压。</li>
+          <li>下载对应浏览器的 chrome.zip 或 edge.zip 并解压。</li>
           <li>打开浏览器的扩展管理页面，开启开发者模式。</li>
           <li>点击“加载已解压的扩展程序”，选择含 manifest.json 的目录。Edge 如提示修改新标签页，请选择“保留更改”。</li>
           <li>打开新标签页即可体验。更新本地文件后，在扩展卡片上点击“重新加载”。</li>
         </ol><p class="guide-code-label">扩展管理页面</p><pre><code>chrome://extensions/
 edge://extensions/</code></pre></article>
         <article class="guide-card"><h3>Firefox 142+ · 临时安装</h3><ol>
-          <li>发布后，从 Releases 下载 firefox.zip，或使用自行构建的文件。</li>
+          <li>下载 firefox.zip，或使用自行构建的文件。</li>
           <li>打开下方调试页面，点击“临时载入附加组件”，选择 firefox.zip 或解压目录中的 manifest.json。</li>
           <li>打开新标签页即可体验。临时扩展在 Firefox 重启后需要重新加载；长期安装需要 Mozilla 签名。</li>
         </ol><pre><code>about:debugging#/runtime/this-firefox</code></pre></article>
@@ -67,7 +74,7 @@ npm run lint:firefox</code></pre><p>安装包位于 builds/：chrome.zip、edge.
     <section id="guide" class="guide-section"><p class="eyebrow">使用指南</p><h2>把喜欢的留下。</h2>
       <div class="guide-grid">
         <article class="guide-card"><h3>01 · 找到喜欢的诗句</h3><p>打开齿轮菜单中的“个性化”，搜索诗句、作者或篇名，也可以选择推荐名句。选回“随机诗句”即可恢复轮换。</p></article>
-        <article class="guide-card"><h3>02 · 调整背景氛围</h3><p>在“背景”中选择波浪或 Blobs、昼夜主题与动静设置。在“个性化”中选择传统色，或自定义波浪底色与名称。选回“随机”即可恢复颜色轮换。</p></article>
+        <article class="guide-card"><h3>02 · 调整背景氛围</h3><p>波浪有许多传统底色可选，喜欢哪一种，就让它慢慢流动。切到 Blobs 泡泡背景，点击背景还可以添上新的泡泡。</p><p>在“背景”中选择波浪或 Blobs、昼夜主题与动静设置。在“个性化”中选择传统色，或自定义波浪底色与名称。选回“随机”即可恢复颜色轮换。</p></article>
         <article class="guide-card"><h3>03 · 选择字体与字形</h3><p>在“字体”中选择内置字体与字形，分别调整诗句和色名的字号。女书凤栖可附带汉字原文；缺少女书字形的字会以汉字显示。</p></article>
         <article class="guide-card"><h3>04 · 固定常用网址</h3><p>在“设置”中开启“显示常用网址”，最多可添加 8 个地址。悬停或聚焦卡片后，通过菜单编辑或移除。网址保存在当前浏览器，关闭后重新开启会恢复。</p></article>
       </div>
@@ -79,11 +86,12 @@ npm run lint:firefox</code></pre><p>安装包位于 builds/：chrome.zip、edge.
         <figure><img src="../images/jizhi-fonts.png" alt="字体面板：简繁字形与字体分组" loading="lazy"><figcaption>字体面板：简繁字形与字体分组</figcaption></figure>
       </div>
     </section>
+    <section class="guide-section guide-note"><h2>在 GitHub，继续聊聊几枝。</h2><p>如果你也喜欢几枝，可以到 GitHub 看看源码、翻翻更新记录。遇到问题，或有新的想法，也欢迎留下 Issue。</p><div class="guide-actions"><a class="button primary" href="https://github.com/Amy22707/jizhi" target="_blank" rel="noopener noreferrer">查看 GitHub 项目 ↗</a><a class="button" href="https://github.com/Amy22707/jizhi/releases" target="_blank" rel="noopener noreferrer">版本与更新 ↗</a></div></section>
     <section class="guide-section"><h2>常见问题与鸣谢</h2>
       <details><summary>我的设置保存在哪里？</summary><p>诗句与颜色历史、固定选择和常用网址保存在当前浏览器，不会自动跨浏览器或设备同步。</p></details>
       <details><summary>这是原版几枝吗？</summary><p>不是。这是基于 Unicar 及其贡献者开发的几枝制作的非官方增强版。原版的商店入口不是本增强版的下载链接。</p><a href="https://github.com/liminalpurr/jizhi" target="_blank" rel="noopener noreferrer">原版几枝 ↗</a></details>
       <p>感谢原版几枝贡献者，以及诗词、传统色与字体资源的维护者。完整鸣谢与数据来源见项目仓库。</p>
-      <div class="guide-actions"><a class="button" href="https://github.com/Amy22707/jizhi/blob/main/CREDITS.md" target="_blank" rel="noopener noreferrer">鸣谢 ↗</a><a class="button" href="https://github.com/Amy22707/jizhi/issues" target="_blank" rel="noopener noreferrer">反馈与问题 ↗</a></div>
+      <div class="guide-actions"><a class="button" href="https://github.com/Amy22707/jizhi/blob/master/CREDITS.md" target="_blank" rel="noopener noreferrer">鸣谢 ↗</a><a class="button" href="https://github.com/Amy22707/jizhi/issues" target="_blank" rel="noopener noreferrer">反馈与问题 ↗</a></div>
     </section>
   </main>
   <footer class="shell site-footer"><a class="brand" href="../">Amy Studio<span class="brand-period">.</span></a><p>Small things, thoughtfully made.</p><span>© <span id="year">2026</span> Amy Studio</span></footer>

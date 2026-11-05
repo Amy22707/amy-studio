@@ -12,7 +12,11 @@
         "Standard & Gallery editions with separate saves",
         "Save import, export, and device migration"
       ],
-      "platforms": ["Windows", "Android", "Web"],
+      "platforms": [
+        "Windows",
+        "Android",
+        "Web"
+      ],
       "version": "",
       "image": "./images/travel-frog-anniversary.png",
       "imageLayout": "postcard",
@@ -34,7 +38,11 @@
         "Traditional-color waves and Blobs animations",
         "Bundled fonts, including Nüshu Fengqi"
       ],
-      "platforms": ["Chrome", "Firefox", "Edge"],
+      "platforms": [
+        "Chrome",
+        "Firefox",
+        "Edge"
+      ],
       "version": "2.5.2 · Preview",
       "prerelease": true,
       "notice": "Download the installation packages from GitHub Releases and follow the user guide to get started.",
@@ -48,20 +56,36 @@
       "releaseUrl": "https://github.com/Amy22707/jizhi/releases/tag/v2.5.2"
     },
     {
-      "id": "tool-01",
+      "id": "focusbloom",
       "kind": "tool",
-      "title": "",
-      "description": "",
-      "details": "",
-      "platforms": [],
+      "title": "FocusBloom",
+      "description": "A Windows focus and study planner with customizable app restrictions.",
+      "details": "Focus timers, task and planning lists, a class calendar, and reflection. Core features work offline.",
+      "platforms": [
+        "Windows",
+        "Chrome",
+        "Edge",
+        "Firefox"
+      ],
       "version": "",
-      "image": "",
+      "image": "./images/focusbloom.jpg",
       "downloadUrl": "",
       "playUrl": "",
-      "sourceUrl": "",
-      "releaseUrl": ""
+      "sourceUrl": "https://github.com/Amy22707/FocusBloom",
+      "releaseUrl": "https://github.com/Amy22707/FocusBloom/releases",
+      "highlights": [
+        "Custom app restrictions",
+        "Daily, weekly, and monthly lists",
+        "Standalone website blocking extension"
+      ],
+      "imageAlt": "Full-screen focus timer against a lake at dusk",
+      "pageUrl": "https://amy22707.github.io/amy-studio/focusbloom/",
+      "imageLayout": "cover"
     }
   ],
   "updates": [],
-  "contact": { "email": "", "feedbackUrl": "" }
+  "contact": {
+    "email": "",
+    "feedbackUrl": ""
+  }
 }

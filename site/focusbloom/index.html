@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>一刻专注 · Amy Studio</title>
+  <meta name="description" content="一刻专注是一款 Windows 专注与学习管理软件，支持自定义应用限制。">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../jizhi/guide.css"><link rel="stylesheet" href="../i18n/language.css">
+  <script>try { const t=localStorage.getItem('amy-studio.theme'); if(t==='light'||t==='dark')document.documentElement.dataset.theme=t; } catch {}</script>
+  <script defer src="../i18n/runtime.js"></script><script type="module" src="../jizhi/guide.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到内容</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="../">Amy Studio<span class="brand-period">.</span></a>
+    <nav aria-label="页面导航"><a href="#features">功能介绍</a><a href="#install">安装</a></nav>
+    <div class="site-controls"><div class="theme-controls">
+      <button id="theme-toggle" class="icon-button" aria-label="切换颜色主题"><span aria-hidden="true">☾</span></button>
+      <button id="theme-system" class="system-button" title="跟随系统主题" aria-pressed="true">跟随系统</button>
+    </div></div>
+  </div></header>
+  <main id="main" class="shell guide-page">
+    <section class="guide-hero">
+      <p class="eyebrow">Windows · 本机优先</p><h1>一刻专注</h1>
+      <p class="guide-lead">安排任务，也给自己留一段专注时间。</p>
+      <p>一刻专注把待办、日历和专注记录放在一起。开始严格专注后，可以按自己设置的名单限制其他应用。核心功能无需注册。</p>
+      <div class="guide-actions"><a class="button primary" href="#install">下载与安装 ↘</a><a class="button" href="https://github.com/Amy22707/FocusBloom">GitHub ↗</a></div>
+      <figure class="guide-cover"><img src="../images/focusbloom.jpg" alt="湖畔暮色下的全屏专注计时" width="1280" height="800"></figure>
+    </section>
+    <section id="features" class="guide-section"><h2>功能介绍</h2><div class="guide-grid">
+      <article class="guide-card"><h3>计时与严格模式</h3><p>支持正计时、倒计时和番茄循环。用黑名单限制指定应用，或用白名单只开放所需应用。休息和结束时解除限制。</p></article>
+      <article class="guide-card"><h3>学习与日程</h3><p>用日、周、月清单安排生活和学习。翻看历史计划，或从任一事项直接开始专注。另有课表、倒数日、习惯打卡和心情复盘。</p></article>
+    </div></section>
+    <section id="install" class="guide-section"><h2>下载与安装</h2>
+      <div class="guide-grid">
+        <article class="guide-card"><h3>Windows x64</h3><p>Windows 安装包发布后，可在 GitHub Releases 下载 MSI。双击安装，再从开始菜单打开 FocusBloom。</p><a class="button primary" href="https://github.com/Amy22707/FocusBloom/releases">查看 GitHub Releases ↗</a></article>
+        <article class="guide-card"><h3>独立浏览器扩展</h3><p>在浏览器里计时，并在专注期间限制指定网站。</p><p class="guide-note">扩展尚未在浏览器商店上架。扩展 ZIP 发布后可按下方步骤加载。</p></article>
+        <article class="guide-card"><h3>Chrome 与 Microsoft Edge</h3><ol><li>下载并解压 Chromium ZIP。</li><li>打开扩展管理页，启用开发者模式。</li><li>点击「加载已解压的扩展程序」，选择包含 manifest.json 的文件夹。</li></ol><pre><code>chrome://extensions/
+edge://extensions/</code></pre></article>
+        <article class="guide-card"><h3>Firefox 140+</h3><ol><li>下载 Firefox ZIP。</li><li>打开调试页，点击「临时载入附加组件」，选择 ZIP。</li><li>重启 Firefox 后需重新加载。</li></ol><pre><code>about:debugging#/runtime/this-firefox</code></pre></article>
+      </div>
+      <p>Windows 11 预装 WebView2 Runtime，绝大多数 Windows 10 设备也已安装。内置学习浏览器提示缺少运行时时，可前往 <a href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section">微软官方下载页</a> 补装。</p>
+    </section>
+    <footer class="site-footer"><p>© <span id="year"></span> Amy Studio</p></footer>
+  </main>
+</body>
+</html>

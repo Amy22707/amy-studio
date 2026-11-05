@@ -67,12 +67,12 @@
         "Edge",
         "Firefox"
       ],
-      "version": "",
+      "version": "1.0.0",
       "image": "./images/focusbloom.jpg",
-      "downloadUrl": "",
+      "downloadUrl": "https://github.com/Amy22707/FocusBloom/releases/download/v1.0.0/FocusBloom-Windows-x64.msi",
       "playUrl": "",
       "sourceUrl": "https://github.com/Amy22707/FocusBloom",
-      "releaseUrl": "https://github.com/Amy22707/FocusBloom/releases",
+      "releaseUrl": "https://github.com/Amy22707/FocusBloom/releases/tag/v1.0.0",
       "highlights": [
         "Custom app restrictions",
         "Daily, weekly, and monthly lists",

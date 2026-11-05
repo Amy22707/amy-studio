@@ -52,6 +52,7 @@ function description(project) { return text(project.description) || 'A new space
 function artwork(project) {
   const node = element('div', `project-art ${project.kind}`);
   if (project.imageLayout === 'postcard') node.classList.add('postcard');
+  if (project.imageLayout === 'cover') node.classList.add('cover');
   const url = imageUrl(project.image);
   if (url) {
     const image = element('img');

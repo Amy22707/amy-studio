@@ -165,15 +165,23 @@ function renderUpdates(updates) {
       const cover = element('img');cover.src = image;cover.alt = text(entry.imageAlt) || entry.title;cover.loading = 'lazy';
       art.append(cover);row.append(art);row.classList.add('has-cover');
     }
-    const time = element('time', '', text(entry.date));
-    if (/^\d{4}-\d{2}-\d{2}$/.test(text(entry.date))) time.dateTime = entry.date;
+    const dates = element('div', 'update-dates');
+    const addDate = (label, value) => {
+      const field = element('div');
+      const time = element('time', '', text(value));
+      if (/^\d{4}-\d{2}-\d{2}$/.test(text(value))) time.dateTime = value;
+      field.append(element('span', 'update-date-label', label), time);
+      dates.append(field);
+    };
+    addDate('Published', entry.date);
+    if (text(entry.updatedAt) && entry.updatedAt !== entry.date) addDate('Updated', entry.updatedAt);
     const copy = element('div');
     const heading = element('h3');
     const href = externalUrl(entry.url);
     if (href) { const a = element('a', '', entry.title); a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer'; heading.append(a); }
     else heading.textContent = entry.title;
     copy.append(heading, element('p', '', text(entry.description)));
-    row.append(time, copy);
+    row.append(dates, copy);
     list.append(row);
   }
 }
@@ -182,9 +190,9 @@ function renderContact(contact) {
   const links = [];
   const email = text(contact?.email);
   if (/^[^\s@?&#]+@[^\s@?&#]+\.[^\s@?&#]+$/.test(email)) {
-    const a = element('a', '', 'Email the studio ↗');
-    a.href = `mailto:${email}`;
-    links.push(a);
+    const address = element('span', 'contact-email', email);
+    address.setAttribute('translate', 'no');
+    links.push(address);
   }
   const href = externalUrl(contact?.feedbackUrl);
   if (href) { const a = element('a', '', 'Send feedback ↗'); a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer'; links.push(a); }

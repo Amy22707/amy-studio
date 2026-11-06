@@ -84,9 +84,10 @@
     }
   ],
   "updates": [{
-    "date": "2026-11-06",
+    "date": "2026-09-10",
+    "updatedAt": "2026-11-06",
     "title": "旅行青蛙开发日志",
-    "description": "从客户端、协议与存档出发，记录旅行青蛙本地版的实现过程。",
+    "description": "从保存存档，到旅行日记与跨设备游玩，记录这个本地版一点点成形的过程。",
     "image": "./images/travel-frog-diary.png",
     "imageAlt": "旅行青蛙的旅行日记界面",
     "url": "https://amy22707.github.io/amy-studio/notes/travel-frog/"

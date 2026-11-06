@@ -15,6 +15,7 @@
       ],
       "platforms": [
         "Windows",
+        "macOS",
         "Android",
         "iOS / Web"
       ],

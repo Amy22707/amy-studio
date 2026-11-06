@@ -60,10 +60,11 @@
       "id": "focusbloom",
       "kind": "tool",
       "title": "FocusBloom",
-      "description": "A Windows focus planner with app restrictions and a standalone browser extension.",
+      "description": "A Windows and macOS focus planner with app restrictions and a standalone browser extension.",
       "details": "Plan your work, time focus sessions, and block distracting sites. The desktop app and browser extension both work offline.",
       "platforms": [
         "Windows",
+        "macOS",
         "Chrome",
         "Edge",
         "Firefox"
@@ -84,15 +85,17 @@
       "imageLayout": "cover"
     }
   ],
-  "updates": [{
-    "date": "2026-09-10",
-    "updatedAt": "2026-11-06",
-    "title": "旅行青蛙开发日志",
-    "description": "从保存存档，到旅行日记与跨设备游玩，记录这个本地版一点点成形的过程。",
-    "image": "./images/travel-frog-diary.png",
-    "imageAlt": "旅行青蛙的旅行日记界面",
-    "url": "https://amy22707.github.io/amy-studio/notes/travel-frog/"
-  }],
+  "updates": [
+    {
+      "date": "2026-09-10",
+      "updatedAt": "2026-11-06",
+      "title": "旅行青蛙开发日志",
+      "description": "从保存存档，到旅行日记与跨设备游玩，记录这个本地版一点点成形的过程。",
+      "image": "./images/travel-frog-diary.png",
+      "imageAlt": "旅行青蛙的旅行日记界面",
+      "url": "https://amy22707.github.io/amy-studio/notes/travel-frog/"
+    }
+  ],
   "contact": {
     "email": "715580960@qq.com",
     "feedbackUrl": ""

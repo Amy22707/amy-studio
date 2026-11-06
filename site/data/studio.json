@@ -32,7 +32,7 @@
       "id": "jizhi",
       "kind": "tool",
       "title": "Jizhi Enhanced",
-      "description": "An unofficial enhancement of Jizhi, a Chinese-poetry new-tab extension with traditional-color animations, offline poems, and customizable fonts. Preview packages are available on GitHub.",
+      "description": "An unofficial enhancement of Jizhi, a Chinese-poetry new-tab extension with traditional-color animations, offline poems, and customizable fonts. Installation packages are available on GitHub.",
       "details": "Based on the original Jizhi extension by Unicar and its contributors. Features include offline poems, animated wave and Blobs backgrounds, poem search and pinning, and bundled fonts including Nüshu Fengqi.",
       "highlights": [
         "Offline Chinese poetry with search and pinning",
@@ -44,8 +44,8 @@
         "Firefox",
         "Edge"
       ],
-      "version": "2.5.2 · Preview",
-      "prerelease": true,
+      "version": "2.5.2",
+      "prerelease": false,
       "notice": "Download the installation packages from GitHub Releases and follow the user guide to get started.",
       "image": "./images/jizhi-waves.png",
       "imageLayout": "cover",

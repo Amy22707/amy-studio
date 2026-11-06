@@ -106,7 +106,11 @@ function card(project) {
   details.addEventListener('click', () => openProject(project));
   actions.append(details);
   if (externalUrl(project.pageUrl) && externalUrl(project.sourceUrl)) actions.append(link('GitHub ↗', externalUrl(project.sourceUrl)));
-  if (externalUrl(project.pageUrl)) actions.append(link('User guide ↗', externalUrl(project.pageUrl), true));
+  if (externalUrl(project.pageUrl) && externalUrl(project.playUrl)) {
+    actions.append(link('Play online', externalUrl(project.playUrl), true));
+    actions.append(link('User guide ↗', externalUrl(project.pageUrl)));
+  }
+  else if (externalUrl(project.pageUrl)) actions.append(link('User guide ↗', externalUrl(project.pageUrl), true));
   else if (externalUrl(project.downloadUrl)) actions.append(link('Download ↓', externalUrl(project.downloadUrl), true));
   else if (externalUrl(project.playUrl)) actions.append(link('Play ↗', externalUrl(project.playUrl), true));
   else if (externalUrl(project.sourceUrl)) actions.append(link('Source code', externalUrl(project.sourceUrl)));

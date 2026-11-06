@@ -4,39 +4,48 @@
       "id": "travel-frog",
       "kind": "game",
       "title": "Travel Frog: A Journey to China — Local Reverse-Engineered Edition",
-      "description": "An unofficial local recreation of the game's full feature set, with Standard and Gallery editions for Windows, Android, and the web.",
-      "details": "Recreates travel, postcards, albums and animated photos, shops and lottery, visitors, gardening, furniture, crafting, collections, and seasonal events. Saves can be imported, exported, and transferred between devices. Testing is ongoing; downloads and online play are not yet available. The project page includes installation and official-save backup instructions.",
+      "description": "Play the unofficial Normal or Gallery edition on Windows, Android, or in your browser. Each Windows edition has its own offline installer.",
+      "details": "Start fresh or import your progress in the Normal edition. Gallery edition: Unlocks all furniture, items, stories, titles, friendship books, collections, and encyclopedia entries. All static photos and materials for making animated photos are included. Clover and common consumables are unlimited. All limited-time events, including Mid-Autumn Festival, Lunar New Year, and the anniversary, are always available. The Gallery edition uses a separate save.",
       "highlights": [
-        "Travel, postcards, albums, and full collections",
-        "Gardening, furniture, crafting, and seasonal events",
-        "Standard & Gallery editions with separate saves",
-        "Save import, export, and device migration"
+        "Gallery: all furniture, items, stories, titles, friendship books, collections, and encyclopedia entries unlocked",
+        "All static photos and materials for animated photos included",
+        "Unlimited clover and common consumables",
+        "All limited-time events available year-round, including Mid-Autumn Festival, Lunar New Year, and the anniversary",
+        "Separate saves for the Normal and Gallery editions"
       ],
-      "platforms": ["Windows", "Android", "Web"],
-      "version": "",
+      "platforms": [
+        "Windows",
+        "Android",
+        "iOS / Web"
+      ],
+      "version": "v0.2.4",
       "image": "./images/travel-frog-anniversary.png",
       "imageLayout": "postcard",
       "imageAlt": "Anniversary postcard: the frog and friends gathered around a cake",
       "pageUrl": "https://amy22707.github.io/studio/travel-frog/",
-      "downloadUrl": "",
-      "playUrl": "",
-      "sourceUrl": "",
-      "releaseUrl": ""
+      "downloadUrl": "https://github.com/Amy22707/Travel-Frog/releases/tag/v0.2.4",
+      "playUrl": "https://amy22707.github.io/studio/travel-frog/#versions",
+      "sourceUrl": "https://github.com/Amy22707/Travel-Frog",
+      "releaseUrl": "https://github.com/Amy22707/Travel-Frog/releases/tag/v0.2.4"
     },
     {
       "id": "jizhi",
       "kind": "tool",
       "title": "Jizhi Enhanced",
-      "description": "An unofficial enhancement of Jizhi, a Chinese-poetry new-tab extension with traditional-color animations, offline poems, and customizable fonts. Preview packages are available on GitHub.",
+      "description": "An unofficial enhancement of Jizhi, a Chinese-poetry new-tab extension with traditional-color animations, offline poems, and customizable fonts. Installation packages are available on GitHub.",
       "details": "Based on the original Jizhi extension by Unicar and its contributors. Features include offline poems, animated wave and Blobs backgrounds, poem search and pinning, and bundled fonts including Nüshu Fengqi.",
       "highlights": [
         "Offline Chinese poetry with search and pinning",
         "Traditional-color waves and Blobs animations",
         "Bundled fonts, including Nüshu Fengqi"
       ],
-      "platforms": ["Chrome", "Firefox", "Edge"],
-      "version": "2.5.2 · Preview",
-      "prerelease": true,
+      "platforms": [
+        "Chrome",
+        "Firefox",
+        "Edge"
+      ],
+      "version": "2.5.2",
+      "prerelease": false,
       "image": "./images/jizhi-waves.png",
       "imageLayout": "cover",
       "pageUrl": "https://amy22707.github.io/amy-studio/jizhi/",
@@ -47,20 +56,36 @@
       "releaseUrl": "https://github.com/Amy22707/jizhi/releases/tag/v2.5.2"
     },
     {
-      "id": "tool-01",
+      "id": "focusbloom",
       "kind": "tool",
-      "title": "",
-      "description": "",
-      "details": "",
-      "platforms": [],
-      "version": "",
-      "image": "",
-      "downloadUrl": "",
+      "title": "FocusBloom",
+      "description": "A Windows focus planner with app restrictions and a standalone browser extension.",
+      "details": "Plan your work, time focus sessions, and block distracting sites. The desktop app and browser extension both work offline.",
+      "platforms": [
+        "Windows",
+        "Chrome",
+        "Edge",
+        "Firefox"
+      ],
+      "version": "1.0.1",
+      "image": "./images/focusbloom.jpg",
+      "downloadUrl": "https://github.com/Amy22707/FocusBloom/releases/download/v1.0.1/FocusBloom-Windows-x64.msi",
       "playUrl": "",
-      "sourceUrl": "",
-      "releaseUrl": ""
+      "sourceUrl": "https://github.com/Amy22707/FocusBloom",
+      "releaseUrl": "https://github.com/Amy22707/FocusBloom/releases/tag/v1.0.1",
+      "highlights": [
+        "Custom app restrictions",
+        "Daily, weekly, and monthly lists",
+        "Standalone website blocking extension"
+      ],
+      "imageAlt": "Full-screen focus timer against a lake at dusk",
+      "pageUrl": "https://amy22707.github.io/amy-studio/focusbloom/",
+      "imageLayout": "cover"
     }
   ],
   "updates": [],
-  "contact": { "email": "", "feedbackUrl": "" }
+  "contact": {
+    "email": "",
+    "feedbackUrl": ""
+  }
 }

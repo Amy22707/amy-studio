@@ -10,7 +10,8 @@ function checkUrl(value, field) {
   if (!value) return;
   const url = new URL(value);
   if (!['https:', 'http:'].includes(url.protocol)) throw new Error(`${field} must use an HTTP(S) URL.`);
-  const gamePage = field.endsWith('.pageUrl') && url.pathname === '/studio/travel-frog/';
+  const gamePage = (field === 'travel-frog.pageUrl' || field === 'travel-frog.playUrl')
+    && url.pathname === '/studio/travel-frog/';
   if (url.hostname.toLowerCase() === 'amy22707.github.io' && !url.pathname.startsWith('/amy-studio/') && !gamePage) {
     throw new Error(`${field} links back to the personal website. Keep Studio links within /amy-studio/.`);
   }

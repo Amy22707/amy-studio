@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>一刻专注 · Amy Studio</title>
+  <meta name="description" content="一刻专注是一款 Windows 专注与学习管理软件，支持自定义应用限制。">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../jizhi/guide.css"><link rel="stylesheet" href="./features.css"><link rel="stylesheet" href="../i18n/language.css">
+  <script>try { const t=localStorage.getItem('amy-studio.theme'); if(t==='light'||t==='dark')document.documentElement.dataset.theme=t; } catch {}</script>
+  <script defer src="../i18n/runtime.js"></script><script type="module" src="../jizhi/guide.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到内容</a>
+  <header class="site-header"><div class="header-inner">
+    <a class="brand" href="../">Amy Studio<span class="brand-period">.</span></a>
+    <nav aria-label="页面导航"><a href="#features">功能介绍</a><a href="#browser-extension">浏览器扩展</a><a href="#install">安装</a></nav>
+    <div class="site-controls"><div class="theme-controls">
+      <button id="theme-toggle" class="icon-button" aria-label="切换颜色主题"><span aria-hidden="true">☾</span></button>
+      <button id="theme-system" class="system-button" title="跟随系统主题" aria-pressed="true">跟随系统</button>
+    </div></div>
+  </div></header>
+  <main id="main" class="shell guide-page">
+    <section class="guide-hero">
+      <p class="eyebrow">Windows · 本机优先</p><h1>一刻专注</h1>
+      <p class="guide-lead">安排任务，也给自己留一段专注时间。</p>
+      <p>一刻专注把待办、日历和专注记录放在一起。开始严格专注后，可以按自己设置的名单限制其他应用。核心功能无需注册。</p>
+      <p>也可以在 Chrome、Edge 或 Firefox 中用独立扩展计时、限制网站和回看专注记录。</p>
+      <div class="guide-actions"><a class="button primary" href="#install">下载与安装 ↘</a><a class="button" href="https://github.com/Amy22707/FocusBloom">GitHub ↗</a></div>
+      <figure class="guide-cover"><img src="../images/focusbloom.jpg" alt="湖畔暮色下的全屏专注计时" width="1280" height="800"></figure>
+    </section>
+    <section id="features" class="guide-section">
+      <h2>功能介绍</h2>
+      <p>截图使用大学日常的示例资料。点击图片可以查看清晰原图。</p>
+      <div class="guide-grid feature-list">
+        <article class="guide-card">
+          <h3>专注计时</h3>
+          <p>按任务选择正计时、倒计时或番茄循环。做题时可以设定一轮的长度，读书时也可以用正计时记录实际投入。支持暂停、休息和中断恢复。</p>
+          <p>计时可以全屏显示，也可以用置顶浮窗留在屏幕一角。背景、句子、声音和计时字体都可自定义。想留下一刻时，点相机就能导出带计时和背景的截图。</p>
+<figure class="feature-shot">
+  <a href="./screenshots/01-focus.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/01-focus.png" width="1266" height="780" alt="专注计时页面，可选择项目、计时方式和声音。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>专注计时页面，可选择项目、计时方式和声音。</figcaption>
+</figure>
+<details class="feature-more"><summary>查看更多专注计时界面</summary>
+<figure class="feature-shot">
+  <a href="./screenshots/02-immersive.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/02-immersive.png" width="1280" height="800" alt="全屏专注，将当前计时和句子放在背景中央。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>全屏专注，将当前计时和句子放在背景中央。</figcaption>
+</figure>
+</details>
+        </article>
+        <article class="guide-card">
+          <h3>严格模式与网站限制</h3>
+          <p>为严格专注配置应用黑名单或白名单。可以挡住几个容易分心的应用，也可以只放行当前任务需要的应用。限制在专注和暂停时生效，休息或结束后解除。</p>
+          <p>内置学习浏览器有单独的网站规则。日常使用 Chrome、Edge 或 Firefox 时，可以用独立扩展设置网站黑名单或白名单，并在浏览器里计时。</p>
+<figure class="feature-shot">
+  <a href="./screenshots/19-restrictions.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/19-restrictions.png" width="1266" height="780" alt="自行设置应用与网站规则，选择黑名单或白名单。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>自行设置应用与网站规则，选择黑名单或白名单。</figcaption>
+</figure>
+<details class="feature-more"><summary>查看内置学习浏览器</summary>
+<figure class="feature-shot"><a href="./screenshots/23-study-browser.png" target="_blank" rel="noopener noreferrer"><img src="./screenshots/23-study-browser.png" width="1266" height="780" alt="内置学习浏览器，显示本次允许访问的网站。" loading="lazy" decoding="async"></a><figcaption>内置学习浏览器，显示本次允许访问的网站。</figcaption></figure>
+
+</details>
+        </article>
+        <article class="guide-card">
+          <h3>项目与待办</h3>
+          <p>把一门课或一项长期工作建成项目，设置目标、截止日期和里程碑。可以用预设生成一组待办，再补上子任务、优先级和预计用时。</p>
+          <p>待办可以放进四象限查看，也能安排到日历。从待办直接开始专注，记录会关联任务和项目。回到项目里可以对照累计投入、剩余预估和还没安排的待办。</p>
+<figure class="feature-shot">
+  <a href="./screenshots/05-todos.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/05-todos.png" width="1266" height="780" alt="高数作业、Python 习题和课程展示等日常待办。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>高数作业、Python 习题和课程展示等日常待办。</figcaption>
+</figure>
+<details class="feature-more"><summary>查看更多项目与待办界面</summary>
+<figure class="feature-shot">
+  <a href="./screenshots/03-projects.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/03-projects.png" width="1266" height="780" alt="用项目和文件夹整理不同课程及长期任务。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>用项目和文件夹整理不同课程及长期任务。</figcaption>
+</figure>
+<figure class="feature-shot">
+  <a href="./screenshots/06-quadrants.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/06-quadrants.png" width="1266" height="780" alt="按重要与紧急程度查看四象限待办。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>按重要与紧急程度查看四象限待办。</figcaption>
+</figure>
+</details>
+        </article>
+        <article class="guide-card">
+          <h3>日、周、月计划本</h3>
+          <p>日计划适合列出今天要做的事。周计划既可以列整周目标，也可以分到每天。月计划可以列整月安排，也可以拆成每周清单。用月历和日期导航翻看历史或提前规划。</p>
+          <p>事项可以编辑、勾选或直接开始专注。点事项旁的时钟可查看对应的专注历史。删除前需要确认，已经保存的专注记录会保留。</p>
+<figure class="feature-shot">
+  <a href="./screenshots/29-planner.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/29-planner.png" width="1266" height="780" alt="计划本日清单，支持编辑、勾选和从事项开始专注。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>计划本日清单，支持编辑、勾选和从事项开始专注。</figcaption>
+</figure>
+        </article>
+        <article class="guide-card">
+          <h3>日历、课表和提醒</h3>
+          <p>在日历查看待办截止、项目期限和安排的时间块。可以为日期事项设置倒数日和提醒，也可以将日程导出为 ICS。</p>
+          <p>课表支持从 CSV 导入课程，并保留各学期的课程与节次。临时调课或停课可按单次修改，切换学期时还能回看以前的课表。</p>
+<figure class="feature-shot">
+  <a href="./screenshots/08-calendar.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/08-calendar.png" width="1266" height="780" alt="在周历里安排开会、导师讨论、作业和考试。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>在周历里安排开会、导师讨论、作业和考试。</figcaption>
+</figure>
+<details class="feature-more"><summary>查看更多日历、课表和提醒界面</summary>
+<figure class="feature-shot">
+  <a href="./screenshots/09-timetable.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/09-timetable.png" width="1266" height="780" alt="一周课表，展示课程、节次和教室。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>一周课表，展示课程、节次和教室。</figcaption>
+</figure>
+<figure class="feature-shot">
+  <a href="./screenshots/10-date-events.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/10-date-events.png" width="1266" height="780" alt="按组查看考试、报告截止等日期事项。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>按组查看考试、报告截止等日期事项。</figcaption>
+</figure>
+</details>
+        </article>
+        <article class="guide-card">
+          <h3>专注记录与统计</h3>
+          <p>在时间轴查看每次专注的有效时长、对应事项和项目。结束后可以补记成果，写下下次从哪里继续。</p>
+          <p>按日、周、月、年或自定义日期查看时长、次数和活跃天数，比较各项目的投入占比。统计可导出为 Markdown 摘要或 CSV 明细。</p>
+<figure class="feature-shot">
+  <a href="./screenshots/12-statistics.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/12-statistics.png" width="1266" height="780" alt="查看专注趋势、项目投入占比和活跃时段。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>查看专注趋势、项目投入占比和活跃时段。</figcaption>
+</figure>
+<details class="feature-more"><summary>查看更多专注记录与统计界面</summary>
+<figure class="feature-shot">
+  <a href="./screenshots/11-records.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/11-records.png" width="1266" height="780" alt="从时间轴回看专注时段、关联任务和成果。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>从时间轴回看专注时段、关联任务和成果。</figcaption>
+</figure>
+</details>
+        </article>
+        <article class="guide-card">
+          <h3>目标、习惯和心情复盘</h3>
+          <p>给专注时长、次数或习惯打卡设目标，按日期查看完成度。习惯可以设为每天、工作日或指定星期，完成后在日视图打卡。</p>
+          <p>在心情月历回看每天的状态。打开某一天可以写图文复盘，留下当天的感受、想记住的事和明天的第一步。</p>
+<figure class="feature-shot">
+  <a href="./screenshots/14-habits.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/14-habits.png" width="1266" height="780" alt="习惯日视图，展示打卡状态、累计天数和目标进度。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>习惯日视图，展示打卡状态、累计天数和目标进度。</figcaption>
+</figure>
+<details class="feature-more"><summary>查看更多目标、习惯和心情复盘界面</summary>
+<figure class="feature-shot">
+  <a href="./screenshots/15-mood-calendar.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/15-mood-calendar.png" width="1266" height="780" alt="心情月历与当天的图文复盘。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>心情月历与当天的图文复盘。</figcaption>
+</figure>
+</details>
+        </article>
+        <article class="guide-card">
+          <h3>桌面组件与本地资料</h3>
+          <p>可以把计时、专注时长、待办、日历、日期事项、习惯和心情放到桌面，随手查看当前状态。应用提供简体中文和英文界面，可跟随系统切换明暗。</p>
+          <p>离线版的任务、计时记录和复盘保存在当前 Windows 用户的本机资料目录。可以导出备份，换电脑时再恢复。</p>
+<div class="widget-shots">
+<figure class="feature-shot">
+  <a href="./screenshots/widget-calendar.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/widget-calendar.png" width="460" height="460" alt="桌面月历组件，快速查看日期和事项。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>桌面月历组件，快速查看日期和事项。</figcaption>
+</figure>
+<figure class="feature-shot">
+  <a href="./screenshots/widget-habits.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/widget-habits.png" width="340" height="340" alt="桌面习惯组件，查看计划并打卡。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>桌面习惯组件，查看计划并打卡。</figcaption>
+</figure>
+<figure class="feature-shot">
+  <a href="./screenshots/widget-mood.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/widget-mood.png" width="340" height="400" alt="桌面心情月历组件。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>桌面心情月历组件。</figcaption>
+</figure>
+</div>
+<figure class="feature-shot">
+  <a href="./screenshots/17-backup.png" target="_blank" rel="noopener noreferrer">
+    <img src="./screenshots/17-backup.png" width="1266" height="780" alt="在设置中创建备份、恢复资料和选择保存位置。" loading="lazy" decoding="async">
+  </a>
+  <figcaption>在设置中创建备份、恢复资料和选择保存位置。</figcaption>
+</figure>
+        </article>
+        <article id="browser-extension" class="guide-card">
+          <h3>在浏览器里保持专注</h3>
+          <p>扩展可在 Chrome、Microsoft Edge 和 Firefox 中独立运行。安装后点击工具栏图标，即可开始正计时或倒计时，也可以打开独立专注页并全屏显示。关掉面板后，计时仍会继续。</p>
+          <p>用黑名单屏蔽容易分心的网站，或用白名单只保留学习与工作需要的网页。专注及暂停期间应用规则，休息或结束后恢复访问。</p>
+          <p>专注记录可按日期查看。规则、记录和偏好保存在当前浏览器，计时与限制均在本机运行，无需注册账号或安装桌面版。界面支持中英文、自定义配色和明暗主题。</p>
+          <p><a href="#extension-install">查看扩展安装方法</a></p>
+<figure class="feature-shot"><a href="./screenshots/extension-focus.png" target="_blank" rel="noopener noreferrer"><img src="./screenshots/extension-focus.png" width="1280" height="900" alt="独立浏览器扩展的阅读计时页面。" loading="lazy" decoding="async"></a><figcaption>独立浏览器扩展的阅读计时页面。</figcaption></figure>
+<details class="feature-more"><summary>查看网站规则界面</summary>
+<figure class="feature-shot"><a href="./screenshots/extension-rules.png" target="_blank" rel="noopener noreferrer"><img src="./screenshots/extension-rules.png" width="1280" height="900" alt="浏览器扩展的网站规则，可分别保存黑名单和白名单。" loading="lazy" decoding="async"></a><figcaption>浏览器扩展的网站规则，可分别保存黑名单和白名单。</figcaption></figure>
+</details>
+        </article>
+      </div>
+      <div class="guide-note"><p>例如，准备期末考试时，可以在项目里拆出复习任务，把本周要做的事写进周计划，再从「做一套线代真题」直接开始计时。结束后在专注记录里补上错题和下一步，周末回看各科投入了多少时间。</p></div>
+    </section>
+    <section id="install" class="guide-section"><h2>下载与安装</h2>
+      <div class="guide-grid">
+        <article class="guide-card"><h3>Windows x64</h3><p>下载 MSI 后双击，按向导完成安装。结束时可选择启动 FocusBloom，以后也可以从开始菜单打开。覆盖前请先从托盘退出旧版。</p><a class="button primary" href="https://github.com/Amy22707/FocusBloom/releases/download/v1.0.1/FocusBloom-Windows-x64.msi">下载 Windows 安装包 ↓</a></article>
+        <article id="extension-install" class="guide-card"><h3>独立浏览器扩展</h3><p class="guide-note">扩展尚未在浏览器商店上架，可下载 ZIP 按下方步骤加载。</p></article>
+        <article class="guide-card"><h3>Chrome 与 Microsoft Edge</h3><ol><li>下载并解压 Chromium ZIP。</li><li>打开扩展管理页，启用开发者模式。</li><li>点击「加载已解压的扩展程序」，选择包含 manifest.json 的文件夹。</li></ol><pre><code>chrome://extensions/
+edge://extensions/</code></pre><a class="button" href="https://github.com/Amy22707/FocusBloom/releases/download/v1.0.1/FocusBloom-chromium.zip">下载 Chromium ZIP ↓</a></article>
+        <article class="guide-card"><h3>Firefox 140+</h3><ol><li>下载 Firefox ZIP。</li><li>打开调试页，点击「临时载入附加组件」，选择 ZIP。</li><li>重启 Firefox 后需重新加载。</li></ol><pre><code>about:debugging#/runtime/this-firefox</code></pre><a class="button" href="https://github.com/Amy22707/FocusBloom/releases/download/v1.0.1/FocusBloom-firefox.zip">下载 Firefox ZIP ↓</a></article>
+      </div>
+      <p>Windows 11 预装 WebView2 Runtime，绝大多数 Windows 10 设备也已安装。内置学习浏览器提示缺少运行时时，可前往 <a href="https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section">微软官方下载页</a> 补装。</p>
+    </section>
+    <footer class="site-footer"><p>© <span id="year"></span> Amy Studio</p></footer>
+  </main>
+</body>
+</html>

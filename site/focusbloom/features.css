@@ -1,0 +1,54 @@
+.feature-list {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 28px;
+}
+.feature-list .guide-card {
+  padding: clamp(20px, 3vw, 34px);
+}
+.feature-list .guide-card > p {
+  max-width: 78ch;
+}
+.feature-shot {
+  margin: 24px 0 0;
+}
+.feature-shot a {
+  display: block;
+  cursor: zoom-in;
+}
+.feature-shot a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+.feature-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.feature-shot figcaption {
+  font-size: 13px;
+  line-height: 1.65;
+  margin-top: 9px;
+}
+.guide-page .feature-more {
+  margin: 20px 0 0;
+  padding: 15px 18px;
+  background: var(--soft);
+}
+.widget-shots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+@media (max-width: 760px) {
+  .widget-shots {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .widget-shots .feature-shot {
+    max-width: 360px;
+    margin-inline: auto;
+  }
+}

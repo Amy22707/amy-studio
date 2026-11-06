@@ -158,6 +158,13 @@ function renderUpdates(updates) {
   list.replaceChildren();
   for (const entry of entries) {
     const row = element('article', 'update-row');
+    const image = imageUrl(entry.image);
+    if (image) {
+      const art = element('a', 'update-art');
+      art.href = externalUrl(entry.url) || '#updates';
+      const cover = element('img');cover.src = image;cover.alt = text(entry.imageAlt) || entry.title;cover.loading = 'lazy';
+      art.append(cover);row.append(art);row.classList.add('has-cover');
+    }
     const time = element('time', '', text(entry.date));
     if (/^\d{4}-\d{2}-\d{2}$/.test(text(entry.date))) time.dateTime = entry.date;
     const copy = element('div');

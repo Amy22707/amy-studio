@@ -83,9 +83,16 @@
       "imageLayout": "cover"
     }
   ],
-  "updates": [],
+  "updates": [{
+    "date": "2026-11-06",
+    "title": "旅行青蛙开发日志",
+    "description": "从客户端、协议与存档出发，记录旅行青蛙本地版的实现过程。",
+    "image": "./images/travel-frog-diary.png",
+    "imageAlt": "旅行青蛙的旅行日记界面",
+    "url": "https://amy22707.github.io/amy-studio/notes/travel-frog/"
+  }],
   "contact": {
-    "email": "",
+    "email": "715580960@qq.com",
     "feedbackUrl": ""
   }
 }

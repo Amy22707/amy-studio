@@ -5,12 +5,13 @@
       "kind": "game",
       "title": "Travel Frog: A Journey to China — Local Reverse-Engineered Edition",
       "description": "Play the unofficial Normal or Gallery edition on Windows, Android, or in your browser.",
-      "details": "Travel, collect postcards, grow plants, craft furniture, and join seasonal events. Start fresh in the Normal edition or explore unlocked collections in the Gallery edition. Both editions save progress on your device. The project page includes installation, save transfer, and official-save backup instructions.",
+      "details": "Start fresh or import your progress in the Normal edition. Gallery edition: Unlocks all furniture, items, stories, titles, friendship books, collections, and encyclopedia entries. All static photos and materials for making animated photos are included. Clover and common consumables are unlimited. All limited-time events, including Mid-Autumn Festival, Lunar New Year, and the anniversary, are always available. The Gallery edition uses a separate save.",
       "highlights": [
-        "Travel, postcards, albums, and full collections",
-        "Gardening, furniture, crafting, and seasonal events",
-        "Normal and Gallery editions with separate saves",
-        "Save import, export, and device migration"
+        "Gallery: all furniture, items, stories, titles, friendship books, collections, and encyclopedia entries unlocked",
+        "All static photos and materials for animated photos included",
+        "Unlimited clover and common consumables",
+        "All limited-time events available year-round, including Mid-Autumn Festival, Lunar New Year, and the anniversary",
+        "Separate saves for the Normal and Gallery editions"
       ],
       "platforms": [
         "Windows",

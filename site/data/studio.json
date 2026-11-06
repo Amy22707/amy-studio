@@ -4,28 +4,28 @@
       "id": "travel-frog",
       "kind": "game",
       "title": "Travel Frog: A Journey to China — Local Reverse-Engineered Edition",
-      "description": "An unofficial local recreation of the game's full feature set, with Standard and Gallery editions for Windows, Android, and the web.",
-      "details": "Recreates travel, postcards, albums and animated photos, shops and lottery, visitors, gardening, furniture, crafting, collections, and seasonal events. Saves can be imported, exported, and transferred between devices. Testing is ongoing; downloads and online play are not yet available. The project page includes installation and official-save backup instructions.",
+      "description": "Play the unofficial Normal or Gallery edition on Windows, Android, or in your browser.",
+      "details": "Travel, collect postcards, grow plants, craft furniture, and join seasonal events. Start fresh in the Normal edition or explore unlocked collections in the Gallery edition. Both editions save progress on your device. The project page includes installation, save transfer, and official-save backup instructions.",
       "highlights": [
         "Travel, postcards, albums, and full collections",
         "Gardening, furniture, crafting, and seasonal events",
-        "Standard & Gallery editions with separate saves",
+        "Normal and Gallery editions with separate saves",
         "Save import, export, and device migration"
       ],
       "platforms": [
         "Windows",
         "Android",
-        "Web"
+        "iOS / Web"
       ],
-      "version": "",
+      "version": "v0.2.3",
       "image": "./images/travel-frog-anniversary.png",
       "imageLayout": "postcard",
       "imageAlt": "Anniversary postcard: the frog and friends gathered around a cake",
       "pageUrl": "https://amy22707.github.io/studio/travel-frog/",
-      "downloadUrl": "",
-      "playUrl": "",
-      "sourceUrl": "",
-      "releaseUrl": ""
+      "downloadUrl": "https://github.com/Amy22707/Travel-Frog/releases/download/v0.2.3/TravelFrogSetup.exe",
+      "playUrl": "https://amy22707.github.io/studio/travel-frog/#versions",
+      "sourceUrl": "https://github.com/Amy22707/Travel-Frog",
+      "releaseUrl": "https://github.com/Amy22707/Travel-Frog/releases/tag/v0.2.3"
     },
     {
       "id": "jizhi",

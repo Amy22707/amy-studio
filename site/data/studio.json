@@ -37,7 +37,6 @@
       "platforms": ["Chrome", "Firefox", "Edge"],
       "version": "2.5.2 · Preview",
       "prerelease": true,
-      "notice": "Download the installation packages from GitHub Releases and follow the user guide to get started.",
       "image": "./images/jizhi-waves.png",
       "imageLayout": "cover",
       "pageUrl": "https://amy22707.github.io/amy-studio/jizhi/",

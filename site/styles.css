@@ -56,6 +56,23 @@ h1 > span { color: var(--muted); font-family: Georgia, "Times New Roman", serif;
 .tool-check { margin-left: auto; color: var(--accent); font-size: 18px; }
 .board-note { margin: 22px 0 0 5px; font-family: Georgia, serif; font-style: italic; font-size: 14px; color: var(--muted); }
 .board-sticker { position: absolute; right: -17px; bottom: -20px; display: grid; place-content: center; width: 77px; height: 77px; border: 3px solid var(--bg); border-radius: 50%; color: var(--ink); background: var(--peach); text-align: center; font-size: 12px; line-height: 1.2; transform: rotate(-15deg); }
+.studio-board.studio-board--collage { width: 100%; min-width: 0; aspect-ratio: .94; padding: 0; transform: rotate(2deg); background: var(--soft); isolation: isolate; }
+.studio-board--collage .board-heading { position: absolute; inset: 6% 7% auto; font-size: 8px; }
+.collage-orbit { position: absolute; width: 67%; aspect-ratio: 1; right: -3%; top: 11%; border: 1px solid var(--line); border-radius: 50%; }
+.collage-print { position: absolute; margin: 0; padding: 8px 8px 0; border: 1px solid var(--line); background: var(--paper); box-shadow: 0 12px 25px #10261918; border-radius: 4px; }
+.collage-print img { display: block; width: 100%; height: auto; border-radius: 2px; }
+.collage-print figcaption { display: flex; justify-content: space-between; align-items: center; gap: 4px; min-height: 29px; padding: 3px 2px; color: var(--muted); font-size: 9px; letter-spacing: .015em; }
+.collage-print figcaption>span:last-child { font-family: Georgia, serif; font-style: italic; opacity: .65; }
+.collage-frog { width: 51%; left: 4%; top: 14%; transform: rotate(-10deg); z-index: 1; }
+.collage-frog::before { content: ''; position: absolute; width: 32%; height: 19px; top: -10px; left: 30%; background: var(--peach); opacity: .65; transform: rotate(6deg); }
+.collage-jizhi { width: 58%; right: -3%; top: 26%; transform: rotate(7deg); z-index: 2; }
+.collage-focus { width: 70%; left: 5%; top: 52%; transform: rotate(-5deg); z-index: 3; }
+.collage-window { display: flex; align-items: center; gap: 4px; height: 20px; color: var(--muted); }
+.collage-window i { width: 4px; height: 4px; background: var(--line); border-radius: 50%; }
+.collage-window>span { margin-left: auto; font-size: 7px; letter-spacing: .08em; padding-right: 3px; }
+.collage-note { position: absolute; right: 5%; bottom: 4%; margin: 0; color: var(--muted); font: italic clamp(11px,1.2vw,16px)/1.4 Georgia, serif; transform: rotate(-5deg); }
+.collage-star { position: absolute; right: 8%; top: 12%; color: #bc7553; font-size: 27px; transform: rotate(10deg); }
+@media(max-width:620px) { .studio-board.studio-board--collage { width: min(390px, calc(100% - 16px)); margin-inline: auto; }.collage-print { padding: 6px 6px 0; }.collage-print figcaption { min-height: 25px; font-size: 8px; }.collage-note { font-size: 12px; } }
 .work-section { padding-top: 20px; }.section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
 .section-heading .eyebrow { margin-bottom: 10px; }.section-heading h2 { margin: 0; font-size: 36px; font-weight: 500; letter-spacing: -.055em; }
 .section-heading > p { margin: 0; color: var(--muted); font-size: 12px; text-align: right; }
@@ -74,12 +91,17 @@ h1 > span { color: var(--muted); font-family: Georgia, "Times New Roman", serif;
 .game-tile span { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid #8c9e8355; border-radius: 10px; background: var(--paper); font-size: 20px; color: var(--accent); }
 .game-tile span:nth-child(5) { background: var(--accent); color: var(--accent-text); }.game-tile span:nth-child(3) { background: var(--peach); }
 .tool-tile { width: 190px; padding: 17px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); box-shadow: var(--shadow); transform: rotate(6deg); }.tool-tile strong { display: block; font-size: 28px; color: var(--accent); margin-bottom: 17px; }.tool-tile i { display: block; height: 7px; margin: 10px 0; border-radius: 5px; background: var(--soft); }.tool-tile i:nth-child(3) { width: 68%; }.tool-tile i:nth-child(4) { width: 85%; }
-.project-copy { display: flex; flex-direction: column; flex: 1; padding: 24px; }.project-topline { display: flex; justify-content: space-between; color: var(--muted); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }.project-status { color: var(--accent); }
+.project-copy { display: flex; flex-direction: column; flex: 1; min-width: 0; padding: 24px 24px 20px; }.project-topline { display: flex; justify-content: space-between; color: var(--muted); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }.project-status { color: var(--accent); }
 .project-copy h3 { margin: 12px 0 8px; font-size: 24px; letter-spacing: -.045em; font-weight: 600; }.project-copy > p { min-height: 48px; margin: 0 0 20px; color: var(--muted); font-size: 13px; }.project-meta { display: flex; flex-wrap: wrap; gap: 6px; }.project-meta span { padding: 3px 8px; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); font-size: 10px; }
 .project-highlights { margin: 0 0 20px; padding-left: 17px; color: var(--muted); font-size: 12px; line-height: 1.8; }
 .project-highlights li + li { margin-top: 3px; }
 .project-copy > .project-notice { min-height: 0; margin: 18px 0 0; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--soft); color: var(--ink); font-size: 11px; line-height: 1.7; }
-.project-actions { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--line); padding-top: 18px; margin-top: auto; }.project-copy > .project-actions { padding-top: 18px; margin-top: 24px; }.project-copy > .project-notice { margin-top: auto; }.project-copy > .project-meta { margin-bottom: 18px; }.detail-button { padding: 0; border: 0; background: transparent; color: var(--ink); font-size: 12px; font-weight: 600; }.detail-button span { margin-left: 9px; }.project-actions .button { padding: 7px 12px; font-size: 11px; }
+.project-actions { display: flex; justify-content: space-between; align-items: center; align-content: center; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--line); padding-top: 18px; margin: 0 24px 24px; }.detail-button { padding: 0; border: 0; background: transparent; color: var(--ink); font-size: 12px; font-weight: 600; }.detail-button span { margin-left: 9px; }.project-actions .button { padding: 7px 12px; font-size: 11px; }
+/* Share artwork, content and footer tracks within each row. Optional notices and
+   wrapped action buttons must not move one card's separator independently. */
+@supports (grid-template-rows: subgrid) {
+  .project-card { display: grid; grid-template-rows: subgrid; grid-row: span 3; row-gap: 0; min-width: 0; }
+}
 .updates-section { padding-block: 90px; }.updates-list { border-top: 1px solid var(--line); margin-top: 28px; }.empty-note { padding: 23px 0; color: var(--muted); font-size: 13px; }.loading-note { color: var(--muted); font-size: 13px; }
 .update-row { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 23px 0; border-bottom: 1px solid var(--line); }.update-row time { color: var(--muted); font-size: 11px; }.update-row h3 { margin: 0 0 5px; font-size: 16px; }.update-row p { margin: 0; color: var(--muted); font-size: 13px; }.update-row a { text-decoration: underline; text-underline-offset: 4px; }
 .about-card { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; padding: 44px; border: 1px solid var(--line); border-radius: 16px; background: var(--soft); }.about-card h2 { margin: 0; font-family: Georgia, serif; font-size: 35px; font-weight: 400; line-height: 1.3; letter-spacing: -.025em; }.about-copy p { margin: 0 0 16px; font-size: 13px; color: var(--muted); line-height: 1.9; }.contact-area { padding-top: 22px; margin-top: 22px; border-top: 1px solid var(--line); }.about-copy .contact-label { margin-bottom: 10px; font-size: 9px; letter-spacing: .1em; }.about-copy .contact-placeholder { margin: 0; font-size: 12px; }.contact-area a { display: inline-block; margin: 0 18px 6px 0; text-decoration: underline; text-underline-offset: 4px; font-size: 12px; }

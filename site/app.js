@@ -121,8 +121,7 @@ function card(project) {
   if (text(project.notice) || !hasDownload && externalUrl(project.pageUrl)) {
     copy.append(element('p', 'project-notice', text(project.notice) || (project.kind === 'tool' ? 'Store listings are not yet available.' : 'Testing in progress. Downloads and online play are not yet available.')));
   }
-  copy.append(actions);
-  node.append(artwork(project), copy);
+  node.append(artwork(project), copy, actions);
   return node;
 }
 

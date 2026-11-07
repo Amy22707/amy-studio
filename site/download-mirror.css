@@ -1,0 +1,9 @@
+.download-mirror{background:var(--soft);border:0;border-radius:16px;padding:24px;margin:26px 0;color:var(--muted);font-size:15px;line-height:1.9;overflow-wrap:anywhere}
+.download-mirror h3{margin:0 0 12px;color:var(--ink);font-size:18px;font-weight:600;line-height:1.5}
+.download-mirror p{margin:0 0 12px;padding:0;color:var(--muted);font-size:15px;line-height:1.9}
+.download-mirror p:last-child{margin-bottom:0}
+.download-mirror a{display:inline;padding:0;margin:0;border:0;border-radius:0;background:none;box-shadow:none;color:var(--accent);font-size:inherit;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+.download-mirror a:hover{transform:none}
+.download-mirror a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.download-mirror code{padding:0;border:0;background:none;color:var(--ink);font-family:Consolas,ui-monospace,monospace;font-size:.95em}
+@media(max-width:640px){.download-mirror{padding:20px}}

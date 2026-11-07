@@ -108,13 +108,12 @@ function card(project) {
   if (externalUrl(project.pageUrl) && externalUrl(project.sourceUrl)) actions.append(link('GitHub ↗', externalUrl(project.sourceUrl)));
   if (externalUrl(project.pageUrl) && externalUrl(project.playUrl)) {
     actions.append(link('Play online', externalUrl(project.playUrl), true));
-    actions.append(link('User guide ↗', externalUrl(project.pageUrl)));
+    actions.append(link('User guide ↗', externalUrl(project.pageUrl), true));
   }
   else if (externalUrl(project.pageUrl)) actions.append(link('User guide ↗', externalUrl(project.pageUrl), true));
   else if (externalUrl(project.downloadUrl)) actions.append(link('Download ↓', externalUrl(project.downloadUrl), true));
   else if (externalUrl(project.playUrl)) actions.append(link('Play ↗', externalUrl(project.playUrl), true));
   else if (externalUrl(project.sourceUrl)) actions.append(link('Source code', externalUrl(project.sourceUrl)));
-  if (externalUrl(project.mirrorUrl)) actions.append(link('Download via Baidu Netdisk ↗', externalUrl(project.mirrorUrl)));
   copy.append(topline, element('h3', '', title(project)), element('p', '', description(project)));
   const highlights = (Array.isArray(project.highlights) ? project.highlights : []).filter((value) => text(value));
   if (highlights.length) {

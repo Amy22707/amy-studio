@@ -24,7 +24,7 @@ for (const project of data.projects) {
     if (typeof project[field] !== 'string') throw new Error(`${project.id}: ${field} must be a string.`);
   }
   if (!Array.isArray(project.platforms) || project.platforms.some((value) => typeof value !== 'string')) throw new Error(`${project.id}: platforms must be a string array.`);
-  for (const field of ['pageUrl', 'downloadUrl', 'playUrl', 'sourceUrl', 'releaseUrl']) checkUrl(project[field], `${project.id}.${field}`);
+  for (const field of ['pageUrl', 'downloadUrl', 'mirrorUrl', 'playUrl', 'sourceUrl', 'releaseUrl']) checkUrl(project[field], `${project.id}.${field}`);
   if (project.image) {
     if (/^https?:\/\//.test(project.image)) checkUrl(project.image, `${project.id}.image`);
     else {

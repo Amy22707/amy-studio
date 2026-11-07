@@ -83,7 +83,7 @@ function openProject(project) {
   document.querySelector('#dialog-details').textContent = text(project.details);
   const actions = document.querySelector('#dialog-links');
   actions.replaceChildren();
-  for (const [label, key] of [['Project page', 'pageUrl'], ['Download', 'downloadUrl'], ['Play online', 'playUrl'], ['Release notes', 'releaseUrl'], ['Source code', 'sourceUrl']]) {
+  for (const [label, key] of [['Project page', 'pageUrl'], ['Download', 'downloadUrl'], ['Download via Baidu Netdisk ↗', 'mirrorUrl'], ['Play online', 'playUrl'], ['Release notes', 'releaseUrl'], ['Source code', 'sourceUrl']]) {
     const href = externalUrl(project[key]);
     if (href) actions.append(link(label, href, actions.childElementCount === 0));
   }
@@ -114,6 +114,7 @@ function card(project) {
   else if (externalUrl(project.downloadUrl)) actions.append(link('Download ↓', externalUrl(project.downloadUrl), true));
   else if (externalUrl(project.playUrl)) actions.append(link('Play ↗', externalUrl(project.playUrl), true));
   else if (externalUrl(project.sourceUrl)) actions.append(link('Source code', externalUrl(project.sourceUrl)));
+  if (externalUrl(project.mirrorUrl)) actions.append(link('Download via Baidu Netdisk ↗', externalUrl(project.mirrorUrl)));
   copy.append(topline, element('h3', '', title(project)), element('p', '', description(project)));
   const highlights = (Array.isArray(project.highlights) ? project.highlights : []).filter((value) => text(value));
   if (highlights.length) {

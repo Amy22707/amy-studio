@@ -46,16 +46,16 @@
         "Firefox",
         "Edge"
       ],
-      "version": "2.5.2",
+      "version": "2.5.3",
       "prerelease": false,
       "image": "./images/jizhi-waves.png",
       "imageLayout": "cover",
       "pageUrl": "https://amy22707.github.io/amy-studio/jizhi/",
       "imageAlt": "Jizhi Enhanced: Chinese poetry over traditional-color waves",
-      "downloadUrl": "https://github.com/Amy22707/jizhi/releases/tag/v2.5.2",
+      "downloadUrl": "https://github.com/Amy22707/jizhi/releases/tag/v2.5.3",
       "playUrl": "",
       "sourceUrl": "https://github.com/Amy22707/jizhi",
-      "releaseUrl": "https://github.com/Amy22707/jizhi/releases/tag/v2.5.2"
+      "releaseUrl": "https://github.com/Amy22707/jizhi/releases/tag/v2.5.3"
     },
     {
       "id": "focusbloom",
